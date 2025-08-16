@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Kamerik205 Regular 6";
+  background-color: #f5f5f5;
+}
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 3";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 3"),
+    url("./Font/Kamerik\ 205\ Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 6";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 6"),
+    url("./Font/Kamerik 205 Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 8";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 8"),
+    url("./Font/Kamerik 205 Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 9";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 9"),
+    url("./Font/Kamerik 205 Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 5";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 5"),
+    url("./Font/Kamerik 205 Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 4";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 4"),
+    url("./Font/Kamerik 205 Bold Oblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 2";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 2"),
+    url("./Font/Kamerik 205 Book Oblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 7";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 7"),
+    url("./Font/Kamerik 205 Heavy Oblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular"),
+    url("./Font/Kamerik 205 Light Oblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kamerik205 Regular 10";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kamerik205 Regular 10"),
+    url("./Font/Kamerik 205 Thin Oblique.woff") format("woff");
+}
