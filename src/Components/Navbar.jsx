@@ -10,9 +10,9 @@ const Navbar = () => {
         merTTech
       </div>
       <div>
-        <ul className="flex items-center gap-5 *:p-2 text-[13.5px] tracking-wide *:*:hover:text-violet-600">
+        <ul className="flex items-center gap-5 *:p-2 text-[13.5px] tracking-wide *:*:hover:text-main">
           <a href="#">
-            <li className="text-violet-600">Home</li>
+            <li className="text-main">Home</li>
           </a>
           <a href="#">
             <li>About</li>
@@ -26,7 +26,7 @@ const Navbar = () => {
           <a href="#" className="!pe-0">
             <li>Contact Me</li>
           </a>
-          <li className="text-xl !p-0  hover:text-violet-600 transition-all cursor-pointer">
+          <li className="text-xl !p-0  hover:text-main transition-all cursor-pointer">
             <RiMoonLine />
           </li>
         </ul>
