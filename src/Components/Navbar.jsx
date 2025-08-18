@@ -26,7 +26,7 @@ const Navbar = () => {
           <a href="#" className="!pe-0">
             <li>Contact Me</li>
           </a>
-          <li className="text-xl !p-0  hover:text-main transition-all cursor-pointer">
+          <li className="text-xl !p-0 hover:text-main transition cursor-pointer">
             <RiMoonLine />
           </li>
         </ul>

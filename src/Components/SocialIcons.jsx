@@ -8,11 +8,17 @@ import { SlSocialLinkedin } from "react-icons/sl";
 
 const SocialIcons = () => {
   return (
-    <>
-      <SlSocialLinkedin className="drop-shadow-black drop-shadow-2xs text-lg" />
-      <FiGithub />
-      <FaInstagram className="drop-shadow-black drop-shadow-3xs"/>
-    </>
+    <div className="flex flex-col gap-6 ps-4 text-xl text-main *:*:hover:text-hover mt-40 *:*:transition ease">
+      <a target="_blank" href="https://www.linkedin.com/in/Omerttech">
+        <SlSocialLinkedin className="drop-shadow-black drop-shadow-2xs text-lg" />
+      </a>
+      <a target="_blank" href="https://github.com/OmerTTech">
+        <FiGithub className="drop-shadow-gray-500 drop-shadow-3xs"/>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/omerttech/">
+        <FaInstagram className="drop-shadow-black drop-shadow-4xs" />
+      </a>
+    </div>
   );
 };
 
