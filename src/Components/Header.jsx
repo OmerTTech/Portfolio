@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Button from "@mui/material/Button";
 import { TbSend2 } from "react-icons/tb";
+import ScrollLink from "./ScrollLink";
 
 const Header = () => {
   return (
@@ -28,13 +29,15 @@ const Header = () => {
           repeat={Infinity}
         />
         <div className="mt-6">
-          <Button
-            variant="contained"
-            className="!capitalize !p-2 !text-lg !font-[500] !pe-2.5 !bg-main hover:!bg-light-hover ease"
-            endIcon={<TbSend2 />}
-          >
-            Contact Me
-          </Button>
+          <ScrollLink to="contact" duration={2250}>
+            <Button
+              variant="contained"
+              className="!capitalize !p-2 !text-lg !font-[500] !pe-2.5 !bg-main hover:!bg-light-hover ease"
+              endIcon={<TbSend2 />}
+            >
+              Contact Me
+            </Button>
+          </ScrollLink>
         </div>
       </div>
     </div>
