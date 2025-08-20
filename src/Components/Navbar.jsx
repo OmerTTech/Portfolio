@@ -1,10 +1,11 @@
 import React from "react";
 import profile from "../Assets/profile.png";
 import { RiMoonLine } from "react-icons/ri";
-import { Link } from "react-scroll";
 import ScrollLink from "./ScrollLink";
 
+
 const Navbar = () => {
+  
   return (
     <nav className="max-w-[1000px] w-full hidden sm:flex items-center justify-between py-5.5 lg:px-2 sm:px-5 text-sm font-[500] bg-white">
       <ScrollLink to="home">
@@ -14,7 +15,7 @@ const Navbar = () => {
         </div>
       </ScrollLink>
       <div>
-        <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover cursor-pointer">
+        <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
           <ScrollLink to="home" offset={-70}>
             <li>Home</li>
           </ScrollLink>

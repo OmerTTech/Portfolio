@@ -7,7 +7,7 @@ const BlobClip = () => {
   return (
     <div>
       <div
-        className="w-[320px] h-[320px] sm:w-[380px] sm:h-[320px] md:w-[320px] md:h-[320px] bg-main hover:bg-[#5b7fd1] transition ease overflow-hidden scale-100 sm:scale-85 md:scale-100"
+        className="w-[320px] h-[320px] sm:w-[380px] sm:h-[320px] md:w-[320px] md:h-[320px] bg-main hover:bg-[#5b7fd1] transition ease overflow-hidden scale-90 sm:scale-85 md:scale-100"
         style={{
           clipPath: `polygon(${polygonPath})`,
           WebkitClipPath: `polygon(${polygonPath})`,

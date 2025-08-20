@@ -13,8 +13,6 @@
   --drop-shadow-4xs: 0 0px 0.25px rgba(0, 0, 0, 0.1);
   --drop-shadow-5xs: 0 0px 0.2px rgba(0, 0, 0, 0.1);
   --drop-shadow-6xs: 0 0px 0.1px rgba(0, 0, 0, 0.1);
-
-  --breakpoint-mss: 45rem !important
 }
 
 .active {
@@ -29,4 +27,8 @@ body {
 a {
   text-decoration: unset;
   color: unset;
+}
+
+.ShadowBlack {
+ box-shadow: 0px -1px 3px 0.5px #00000033;
 }
