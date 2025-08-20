@@ -8,7 +8,7 @@ import { SlSocialLinkedin } from "react-icons/sl";
 
 const SocialIcons = () => {
   return (
-    <div className="flex flex-col gap-6 ps-4 text-xl text-main *:*:hover:text-hover mt-38 *:*:transition ease">
+    <div className="flex flex-col lg:items-start md:items-end bg-red-700 gap-6 ps-4 text-xl text-main *:*:hover:text-hover mt-38 *:*:transition ease">
       <a target="_blank" href="https://www.linkedin.com/in/Omerttech">
         <SlSocialLinkedin className="drop-shadow-black drop-shadow-2xs text-lg" />
       </a>

@@ -6,16 +6,16 @@ import ScrollLink from "./ScrollLink";
 
 const Navbar = () => {
   return (
-    <nav className="w-[1000px] flex items-center justify-between py-5.5 px-2 text-sm font-[500] bg-white">
+    <nav className="max-w-[1000px] w-full flex items-center justify-between py-5.5 lg:px-2 md:px-5 text-sm font-[500] bg-white">
       <ScrollLink to="home">
         <div className="flex items-center text-[15px] tracking-widest cursor-pointer !text-black">
-          <img src={profile} width={30} height={30} />
+          <img src={profile} className="hover:contrast-125 hover:brightness-95 drop-shadow-black drop-shadow-2xs rounded-full" width={30} height={30} />
           merTTech
         </div>
       </ScrollLink>
       <div>
-        <ul className="flex items-center gap-5 *:px-2 *:py-1 text-[13.5px] tracking-wide *:hover:text-main cursor-pointer">
-          <ScrollLink to="home">
+        <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover cursor-pointer">
+          <ScrollLink to="home" offset={-70}>
             <li>Home</li>
           </ScrollLink>
           <ScrollLink to="about">

@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-main: #686a6c;
-  --color-hover: #4c504f;
-  --color-light-hover: #5a5a5a;
-  --color-dark-hover: #9c55ff;
+  --color-main: #5376cb;
+  --color-hover: #3154a9;
+  --color-light-hover: #6487dc;
+  --color-dark-hover: #4265ba;
   --color-white: #f5f5f5;
+  --color-dark: #161a4c;
 
   --drop-shadow-2xs: 0 0px 0.5px rgba(0, 0, 0, 0.1);
   --drop-shadow-3xs: 0 0px 0.375px rgba(0, 0, 0, 0.1);
@@ -15,12 +16,13 @@
 }
 
 .active {
-  color: #686a6c;
+  color: var(--color-main);
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--color-white);
+  color: var(--color-dark);
 }
 a {
   text-decoration: unset;

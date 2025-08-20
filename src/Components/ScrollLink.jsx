@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-const ScrollLink = ({to = "/", duration = 500, offset=-70, children}) => {
+const ScrollLink = ({to = "/", duration = 500, offset=20, children}) => {
     
   return (
     <Link
