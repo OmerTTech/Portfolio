@@ -7,7 +7,7 @@ const BlobClip = () => {
   return (
     <div>
       <div
-        className="lg:w-[320px] lg:h-[320px] bg-main hover:bg-[#5b7fd1] transition  overflow-hidden"
+        className="w-[320px] h-[320px] sm:w-[380px] sm:h-[320px] md:w-[320px] md:h-[320px] bg-main hover:bg-[#5b7fd1] transition ease overflow-hidden scale-100 sm:scale-85 md:scale-100"
         style={{
           clipPath: `polygon(${polygonPath})`,
           WebkitClipPath: `polygon(${polygonPath})`,
@@ -16,7 +16,7 @@ const BlobClip = () => {
         <img
           src={OmerTTech}
           alt="My image"
-          className="w-full h-full object-contain saturate-85 brightness-120 bg-size-[30px] drop-shadow-2xl decoration-black scale-110 mt-5"
+          className="w-full h-full object-contain saturate-85 brightness-120 drop-shadow-2xl decoration-black scale-110 mt-5 sm:-ms-7 md:ms-auto"
         />
       </div>
     </div>

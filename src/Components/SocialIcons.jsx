@@ -8,9 +8,9 @@ import { SlSocialLinkedin } from "react-icons/sl";
 
 const SocialIcons = () => {
   return (
-    <div className="flex flex-col lg:items-start md:items-end bg-red-700 gap-6 ps-4 text-xl text-main *:*:hover:text-hover mt-38 *:*:transition ease">
+    <div className="flex flex-col items-center gap-15 md:gap-6 sm:gap-9.5 ps-10 sm:ps-4 md:items-end lg:items-start text-3xl sm:text-xl text-main *:*:hover:text-hover justify-center sm:mt-16.5 md:mt-38 *:*:transition ease h-full sm:h-auto">
       <a target="_blank" href="https://www.linkedin.com/in/Omerttech">
-        <SlSocialLinkedin className="drop-shadow-black drop-shadow-2xs text-lg" />
+        <SlSocialLinkedin className="drop-shadow-black drop-shadow-2xs text-3xl sm:text-lg" />
       </a>
       <a target="_blank" href="https://github.com/OmerTTech">
         <FiGithub className="drop-shadow-gray-500 drop-shadow-3xs"/>

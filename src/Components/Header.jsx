@@ -6,9 +6,9 @@ import ScrollLink from "./ScrollLink";
 
 const Header = () => {
   return (
-    <div className="bg-red-500">
-      <h1 className="sm:text-3xl/18 md:text-[32px]/12 md:mt-2 lg:text-5xl/18 font-[600] w-full sm:block md:flex lg:flex flex-col flex-wrap md:flex-nowrap">
-  <span>Hi, I am&nbsp;</span>
+    <div>
+      <h1 className="text-[32px]/10 md:text-[32px]/12 md:mt-2 lg:text-5xl/18 font-[600] w-full sm:block md:flex flex-col flex-wrap sm:flex-nowrap">
+  <span>Hi, I am </span>
   <span>Omer Tapdiqov</span>
 </h1>
       <div className="mt-2">
@@ -30,7 +30,7 @@ const Header = () => {
           <ScrollLink to="contact" duration={2250}>
             <Button
               variant="contained"
-              className="!capitalize md:!p-3 lg:!p-2 !text-lg !font-[500] md:!pe-3.5 lg:!pe-2.5 !bg-main hover:!bg-dark-hover ease"
+              className="!capitalize !p-3 lg:!p-2 !text-lg !font-[500] md:!pe-3.5 lg:!pe-2.5 !bg-main hover:!bg-dark-hover ease"
               endIcon={<TbSend2 />}
             >
               Contact Me
