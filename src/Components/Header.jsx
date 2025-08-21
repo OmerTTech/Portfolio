@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Button from "@mui/material/Button";
 import { TbSend2 } from "react-icons/tb";
+import { VscSend } from "react-icons/vsc"
 import ScrollLink from "./ScrollLink";
 
 const Header = () => {
@@ -30,7 +31,7 @@ const Header = () => {
           <ScrollLink to="contact" duration={2250}>
             <Button
               variant="contained"
-              className="!capitalize !p-3 lg:!p-2 !text-lg !font-[500] md:!pe-3.5 lg:!pe-2.5 !bg-main hover:!bg-dark-hover ease"
+              className="!capitalize !p-3 lg:!p-2 !text-lg !font-[500] md:!pe-3.5 lg:!pe-3 !bg-main hover:!bg-dark-hover ease"
               endIcon={<TbSend2 />}
             >
               Contact Me

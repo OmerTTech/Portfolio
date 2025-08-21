@@ -5,7 +5,7 @@ import BlobClip from "../Assets/Header-Blob/BlobClip";
 
 const Main = () => {
   return (
-    <main className="mt-20 sm:mt-38.5">
+    <main className="mt-10 sm:mt-38.5">
       <section>
         <div className="grid grid-cols-12">
           <div className="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-1 sm:pe-10">
