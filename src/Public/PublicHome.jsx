@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { Element } from "react-scroll";
-import Main from "../Components/Main";
+import MainSection from "../Components/MainSection";
 import MobileNavbar from "../Components/Mobile/MobileNavbar";
+import AboutMe from "../Components/AboutMe";
 
 const PublicHome = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [scrollHandler, setScrollHandler] = useState(false);
 
   useEffect(() => {
-    // Sayfa yüklendiğinde scroll pozisyonunu kontrol et
     const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
       if (window.scrollY > 40) {
         setScrollHandler(true);
       } else {
@@ -31,24 +38,30 @@ const PublicHome = () => {
           scrollHandler ? "shadow-nav-mobile sm:shadow-nav-pc" : ""
         }`}
       >
-        <Navbar />
-        <MobileNavbar />
+        <Navbar isScrolled={isScrolled} />
+        <MobileNavbar isScrolled={isScrolled} />
       </div>
-      <Element name="home" className="max-w-[1000px] w-full" offset={-70}>
-        <Main />
-      </Element>
-      <Element name="about">
-        <section className="h-[120vh]">a</section>
-      </Element>
-      <Element name="skills">
-        <section className="h-[120vh]">b</section>
-      </Element>
-      <Element name="portfolio">
-        <section className="h-[120vh]">c</section>
-      </Element>
-      <Element name="contact">
-        <section className="h-[120vh]">contact</section>
-      </Element>
+      <div className="*:max-w-[1000px] *:w-full">
+        <Element name="home" offset={-70}>
+          <MainSection />
+        </Element>
+
+        <Element name="about">
+          <section className="pt-50 h-[120vh]">
+            <AboutMe />
+          </section>
+        </Element>
+
+        <Element name="skills">
+          <section className="h-[120vh]">b</section>
+        </Element>
+        <Element name="portfolio">
+          <section className="h-[120vh]">c</section>
+        </Element>
+        <Element name="contact">
+          <section className="h-[120vh]">contact</section>
+        </Element>
+      </div>
     </div>
   );
 };

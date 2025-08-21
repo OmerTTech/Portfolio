@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import profile from "../../Assets/profile.png";
 import ScrollLink from "../ScrollLink";
 import { RiMoonLine } from "react-icons/ri";
@@ -12,24 +12,8 @@ import { VscSend } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({isScrolled}) => {
   const [open, setOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setIsScrolled(true);
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-7  text-sm font-[500] bg-white">

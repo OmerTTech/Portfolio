@@ -23,7 +23,7 @@ const Header = () => {
           ]}
           speed={60}
           cursor={false}
-          className="text-zinc-500 text-xl font-[500]"
+          className="text-dark-hover text-xl font-[500]"
           repeat={Infinity}
           wrapper="span"
         />

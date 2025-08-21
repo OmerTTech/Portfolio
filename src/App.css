@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @theme {
   --color-main: #5376cb;
@@ -7,6 +9,7 @@
   --color-dark-hover: #4265ba;
   --color-white: #f5f5f5;
   --color-dark: #161a4c;
+  --color-secondary: #71717b;
 
   --shadow-nav-mobile: 0px 1px 3px 0.5px #00000033;
   --shadow-nav-pc: 0px -1px 3px 0.5px #00000033;
