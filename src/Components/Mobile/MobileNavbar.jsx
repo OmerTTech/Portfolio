@@ -46,7 +46,7 @@ const MobileNavbar = () => {
       </ScrollLink>
       <div>
         <ul className="flex items-center gap-4 *:px-5 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
-          <li className="text-2xl !p-0 hover:text-main transition">
+          <li className="text-xl !p-0 hover:text-main transition">
             <RiMoonLine />
           </li>
           <li className="text-3xl hover:text-main transition">
@@ -61,7 +61,7 @@ const MobileNavbar = () => {
               BackdropProps={{ invisible: true }}
             >
               <div className="p-6 pb-2 *:*:hover:text-dark-hover">
-                <div className="grid grid-cols-12 gap-10 *:cursor-pointer ">
+                <div className="grid grid-cols-12 gap-6.5 *:cursor-pointer ">
                   <span className={`col-span-4 pt-2 py-1 ${isScrolled ? "" : "active"}`}>
                     <ScrollLink to="home" offset={0}>
                       <div className="flex items-center justify-center">
@@ -95,7 +95,7 @@ const MobileNavbar = () => {
                     </ScrollLink>
                   </span>
 
-                  <span className="col-span-6 ms-10 pt-2 py-1">
+                  <span className="col-span-6 ms-15 pt-2 py-1">
                     <ScrollLink to="portfolio" offset={40}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
@@ -106,12 +106,12 @@ const MobileNavbar = () => {
                     </ScrollLink>
                   </span>
 
-                  <span className="col-span-6 me-10 pt-2 py-1">
+                  <span className="col-span-6 me-15 pt-2 py-1">
                     <ScrollLink to="contact" offset={50}>
                       <div className="flex items-center justify-center ">
-                        <p className="flex flex-col items-center justify-center">
+                        <p className="flex flex-col flex-nowrap items-center justify-center">
                           <VscSend className="text-2xl drop-shadow-4xs drop-shadow-black" />
-                          <span className="text-md">Contact Me</span>
+                          <span className="text-md text-nowrap">Contact Me</span>
                         </p>
                       </div>
                     </ScrollLink>
