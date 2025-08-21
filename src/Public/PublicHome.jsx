@@ -47,7 +47,7 @@ const PublicHome = () => {
         </Element>
 
         <Element name="about">
-          <section className="pt-50 h-[120vh]">
+          <section className="pt-50">
             <AboutMe />
           </section>
         </Element>
