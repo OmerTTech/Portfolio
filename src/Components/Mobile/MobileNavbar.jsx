@@ -32,7 +32,7 @@ const MobileNavbar = () => {
   }, []);
 
   return (
-    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-8  text-sm font-[500] bg-white">
+    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-7  text-sm font-[500] bg-white">
       <ScrollLink to="home">
         <div className="flex items-center text-[15px] tracking-widest scale-110 cursor-pointer !text-black">
           <img
