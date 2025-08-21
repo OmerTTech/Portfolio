@@ -32,7 +32,7 @@ const MobileNavbar = () => {
   }, []);
 
   return (
-    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6  text-sm font-[500] bg-white">
+    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-8  text-sm font-[500] bg-white">
       <ScrollLink to="home">
         <div className="flex items-center text-[15px] tracking-widest scale-110 cursor-pointer !text-black">
           <img
@@ -96,7 +96,7 @@ const MobileNavbar = () => {
                   </span>
 
                   <span className="col-span-6 ms-15 pt-2 py-1">
-                    <ScrollLink to="portfolio" offset={40}>
+                    <ScrollLink to="portfolio" offset={50}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
                           <IoImageOutline className="text-2xl drop-shadow-6xs drop-shadow-black" />
