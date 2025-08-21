@@ -32,7 +32,7 @@ const MobileNavbar = () => {
   }, []);
 
   return (
-    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-5 pe-2 py-2  text-sm font-[500] bg-white">
+    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-5 pe-4 py-4  text-sm font-[500] bg-white">
       <ScrollLink to="home">
         <div className="flex items-center text-[15px] tracking-widest cursor-pointer !text-black">
           <img
@@ -45,7 +45,7 @@ const MobileNavbar = () => {
         </div>
       </ScrollLink>
       <div>
-        <ul className="flex items-center gap-2 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
+        <ul className="flex items-center gap-4 *:px-3 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
           <li className="text-xl !p-0 hover:text-main transition">
             <RiMoonLine />
           </li>
