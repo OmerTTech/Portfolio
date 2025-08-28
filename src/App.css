@@ -16,7 +16,7 @@
   --drop-shadow-3xs: 0 0px 0.375px rgba(0, 0, 0, 0.1);
   --drop-shadow-4xs: 0 0px 0.25px rgba(0, 0, 0, 0.1);
   --drop-shadow-5xs: 0 0px 0.2px rgba(0, 0, 0, 0.1);
-  --drop-shadow-6xs: 0 0px 0.1px rgba(0, 0, 0, 0.1); 
+  --drop-shadow-6xs: 0 0px 0.1px rgba(0, 0, 0, 0.1);
 }
 
 .active {
@@ -29,6 +29,6 @@ body {
   color: var(--color-dark);
 }
 a {
-  text-decoration: unset;
+  text-decoration: none;
   color: unset;
 }
