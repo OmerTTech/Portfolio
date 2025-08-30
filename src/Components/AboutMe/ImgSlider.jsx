@@ -1,10 +1,10 @@
 import React from "react";
-import image1 from "../../Assets/ImgSlider/image1.png";
-import image2 from "../../Assets/ImgSlider/image2.png";
-import image3 from "../../Assets/ImgSlider/image3.png";
-import image4 from "../../Assets/ImgSlider/image4.png";
-import image5 from "../../Assets/ImgSlider/image5.png";
-import image6 from "../../Assets/ImgSlider/image6.png";
+import image1 from "../../Assets/ImgSlider/ATL_Intern.jpg";
+import image2 from "../../Assets/ImgSlider/Mezun.jpg";
+import image3 from "../../Assets/ImgSlider/FED_Diploma.jpg";
+import image4 from "../../Assets/ImgSlider/Microphone_alman.jpg";
+import image5 from "../../Assets/ImgSlider/Demoday_Project.jpg";
+import image6 from "../../Assets/ImgSlider/Future_software_dev.jpg";
 const images = [image1, image2, image3, image4, image5, image6];
 
 // Bileşen artık bir prop (currentImageIndex) alıyor.
@@ -12,7 +12,7 @@ const ImgSlider = ({ currentImageIndex }) => {
   return (
     <div>
       <div
-        className="w-full h-86 bg-cover bg-center transition-all duration-500 ease-in-out" // Geçiş süresi 500ms'ye düşürüldü
+        className="w-full h-86 bg-cover bg-center transition-all duration-500 ease-in-out drop-shadow-sm drop-shadow-secondary" // Geçiş süresi 500ms'ye düşürüldü
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       ></div>
     </div>

@@ -34,7 +34,7 @@ const AboutMe = () => {
 
         {/* Metin div'i de mobil için tam genişlik, geniş ekranlar için %40 */}
         <div className="w-full md:w-[40%] flex flex-col pt-3">
-          <div className="text-center md:text-start text-secondary pe-5 h-[275px] overflow-y-auto">
+          <div className="text-center md:text-start text-secondary pe-5 h-[290px] overflow-y-auto">
             <h2 className="text-2xl font-semibold mb-2">
               {slidesData[currentSlideIndex].title}
             </h2>
@@ -69,7 +69,7 @@ const AboutMe = () => {
                 <FaArrowRight />
               </button>
             </div>
-            <a className="mt-10" href={OmerTTech_CV_EN} download="OmerTTech_CV.pdf">
+            <a className="mt-10" href={OmerTTech_CV_EN} download="OmerTTech_CV_EN.pdf">
               <Button
                 variant="contained"
                 className=" !capitalize !p-3 lg:!p-3 !text-lg !font-[500] md:!pe-3.5 lg:!pe-3.5 !bg-main hover:!bg-dark-hover ease"
