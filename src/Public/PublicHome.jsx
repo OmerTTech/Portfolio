@@ -4,6 +4,7 @@ import { Element } from "react-scroll";
 import MainSection from "../Components/MainSection";
 import MobileNavbar from "../Components/Mobile/MobileNavbar";
 import AboutMe from "../Components/AboutMe/AboutMe";
+import Skills from "../Components/Skills";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,10 +54,12 @@ const PublicHome = () => {
         </Element>
 
         <Element name="skills">
-          <section className="h-[120vh]">skills</section>
+          <section className="pt-50">
+            <Skills/>
+          </section>
         </Element>
         <Element name="portfolio">
-          <section className="h-[120vh]">portfolio</section>
+          <section className="py-20 h-[120vh]">portfolio</section>
         </Element>
         <Element name="contact">
           <section className="h-[120vh]">contact</section>

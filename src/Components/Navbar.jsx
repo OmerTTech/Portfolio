@@ -20,17 +20,17 @@ const Navbar = ({ isScrolled }) => {
       <div>
         <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
           <span className={`px-2 py-0 hover:text-hover cursor-pointer ${isScrolled ? "" : "active"}`}>
-            <ScrollLink to="home" offset={20}>
+            <ScrollLink to="home" offset={-300}>
               <li>Home</li>
             </ScrollLink>
           </span>
-          <ScrollLink to="about">
+          <ScrollLink to="about" offset={100}>
             <li>About</li>
           </ScrollLink>
-          <ScrollLink to="skills">
+          <ScrollLink to="skills" offset={175}>
             <li>Skills</li>
           </ScrollLink>
-          <ScrollLink to="portfolio">
+          <ScrollLink to="portfolio" offset={150}>
             <li>Portfolio</li>
           </ScrollLink>
           <ScrollLink to="contact">

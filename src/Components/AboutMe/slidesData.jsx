@@ -78,8 +78,8 @@ export const slidesData = [
     title: "Lifelong Ambition",
     text: (
       <>
-        My deep passion and lifelong ambition drive me to become a versatile
-        JavaScript Software Developer/Engineer, building solutions across every
+        My deep passion and lifelong ambition drive me to become a versatile <br/>
+        <span className="text-nowrap">JavaScript Software Developer/Engineer,</span> building solutions across every
         platform with the power of JavaScript.
       </>
     ),

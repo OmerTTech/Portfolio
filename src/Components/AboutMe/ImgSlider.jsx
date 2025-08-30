@@ -12,7 +12,7 @@ const ImgSlider = ({ currentImageIndex }) => {
   return (
     <div>
       <div
-        className="w-full h-86 bg-cover bg-center transition-all duration-500 ease-in-out drop-shadow-sm drop-shadow-secondary" // Geçiş süresi 500ms'ye düşürüldü
+        className="w-full h-100 sm:h-86 bg-cover sm:bg-contain md:bg-cover bg-no-repeat bg-center transition-all duration-500 ease-in-out drop-shadow-sm drop-shadow-secondary" // Geçiş süresi 500ms'ye düşürüldü
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       ></div>
     </div>
