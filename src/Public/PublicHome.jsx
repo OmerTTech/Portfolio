@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import { Element } from "react-scroll";
 import MainSection from "../Components/MainSection";
 import MobileNavbar from "../Components/Mobile/MobileNavbar";
-import AboutMe from "../Components/AboutMe";
+import AboutMe from "../Components/AboutMe/AboutMe";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,10 +53,10 @@ const PublicHome = () => {
         </Element>
 
         <Element name="skills">
-          <section className="h-[120vh]">b</section>
+          <section className="h-[120vh]">skills</section>
         </Element>
         <Element name="portfolio">
-          <section className="h-[120vh]">c</section>
+          <section className="h-[120vh]">portfolio</section>
         </Element>
         <Element name="contact">
           <section className="h-[120vh]">contact</section>
