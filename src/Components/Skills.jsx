@@ -56,7 +56,7 @@ const Skills = () => {
         <h1 className="text-4xl font-[600]">Skills</h1>
         <p className="text-sm text-dark-hover">My tech stack</p>
       </div>
-      <div className="grid grid-cols-3 gap-x-15 sm:gap-x-20 md:gap-x-25 lg:gap-x-30 gap-y-4">
+      <div className="grid grid-cols-3 gap-x-10 sm:gap-x-20 md:gap-x-25 lg:gap-x-30 gap-y-4">
         {skillsData.map((skill, index) => (
           <div
             key={index}

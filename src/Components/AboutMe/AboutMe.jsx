@@ -20,7 +20,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="-ms-3 px-15 md:px-0 lg:px-15 h-full">
+    <div className="">
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-4xl font-[600]">About Me</h1>
         <p className="text-sm text-dark-hover">My Introduction</p>

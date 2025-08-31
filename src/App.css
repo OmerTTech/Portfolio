@@ -41,7 +41,8 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--color-white);
   color: var(--color-dark);
-  overflow: hidden auto;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 a {
   text-decoration: none;

@@ -5,7 +5,7 @@ import BlobClip from "../Assets/HeaderBlob/BlobClip";
 
 const MainSection = () => {
   return (
-    <main className="mt-10 sm:mt-38.5 px-2 sm:px-0">
+    <main className="mt-10 sm:mt-38.5">
       <div className="grid grid-cols-12">
         <div className="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-1 sm:pe-10">
           <SocialIcons />
@@ -13,7 +13,7 @@ const MainSection = () => {
         <div className="sm:col-span-6 md:col-span-5 lg:col-span-6 md:translate-x-[-15px] lg:translate-x-0 pt-7.5 lg:ps-20 max-sm:hidden">
           <Header />
         </div>
-        <div className=" flex items-center justify-center col-span-10 sm:col-span-5 md:col-span-5 lg:col-span-5 ms-20 sm:ms-0">
+        <div className="flex items-center justify-center col-span-10 sm:col-span-5 md:col-span-5 lg:col-span-5 relative sm:ms-0">
           <BlobClip />
         </div>
       </div>

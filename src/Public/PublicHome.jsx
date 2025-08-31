@@ -33,16 +33,16 @@ const PublicHome = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center ps-4">
+    <div className="flex flex-col items-center justify-center">
       <div
-        className={`w-full -ms-4 fixed bottom-0 sm:bottom-auto sm:top-0 z-50 flex flex-col items-center transition ease-in sm:ease-in-out ${
+        className={`w-full fixed bottom-0 sm:bottom-auto sm:top-0 z-50 flex flex-col items-center transition ease-in sm:ease-in-out ${
           scrollHandler ? "shadow-nav-mobile sm:shadow-nav-pc" : ""
         }`}
       >
         <Navbar isScrolled={isScrolled} />
         <MobileNavbar isScrolled={isScrolled} />
       </div>
-      <div className="*:max-w-[1000px] *:w-full">
+      <div className="*:max-w-[1000px] *:w-full ps-0 sm:ps-4 md:ps-0">
         <Element name="home" offset={-70}>
           <MainSection />
         </Element>
