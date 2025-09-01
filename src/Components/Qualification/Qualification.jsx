@@ -74,7 +74,7 @@ const TimelineItem = ({ title, company, years, side, isLast }) => {
             <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
             <p className="text-sm text-secondary mb-1">{company}</p>
             <div className="flex items-center text-gray-400 text-sm">
-              <LuCalendarDays className="mr-1 text-lg" />
+              {years ? <LuCalendarDays className="mr-1 text-lg" /> : ""}
               <span>{years}</span>
             </div>
           </div>
