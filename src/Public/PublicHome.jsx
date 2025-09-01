@@ -5,6 +5,7 @@ import MainSection from "../Components/MainSection";
 import MobileNavbar from "../Components/Mobile/MobileNavbar";
 import AboutMe from "../Components/AboutMe/AboutMe";
 import Skills from "../Components/Skills";
+import Qualification from "../Components/Qualification/Qualification";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +51,9 @@ const PublicHome = () => {
         <Element name="about">
           <section className="pt-50">
             <AboutMe />
+          </section>
+          <section className="pt-50">
+            <Qualification />
           </section>
         </Element>
 
