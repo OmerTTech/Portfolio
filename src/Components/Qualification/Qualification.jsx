@@ -11,7 +11,7 @@ const Qualification = () => {
     <div className="py-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <h1 className="text-4xl font-[600]">Qualification</h1>
-        <p className="text-sm text-gray-600">My personal journey</p>
+        <p className="text-sm text-dark-hover">My personal journey</p>
       </div>
 
       <div className="flex justify-center gap-8 mb-12 *:cursor-pointer">
@@ -19,7 +19,7 @@ const Qualification = () => {
           className={`flex items-center gap-2 py-2 px-4 rounded-lg transition-colors duration-300 ${
             activeTab === "work"
               ? "text-main bg-sky-100"
-              : "text-gray-500 hover:text-main"
+              : "text-secondary hover:text-main"
           }`}
           onClick={() => setActiveTab("work")}
         >
@@ -30,7 +30,7 @@ const Qualification = () => {
           className={`flex items-center gap-2 py-2 px-4 rounded-lg transition-colors duration-300 ${
             activeTab === "education"
               ? "text-main bg-sky-100"
-              : "text-gray-500 hover:text-main"
+              : "text-secondary hover:text-main"
           }`}
           onClick={() => setActiveTab("education")}
         >
@@ -39,7 +39,7 @@ const Qualification = () => {
         </button>
       </div>
 
-      <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-xl px-0 sm:px-6 lg:px-8">
         {currentData.map((item, index) => (
           <TimelineItem
             key={index}
@@ -65,16 +65,16 @@ const TimelineItem = ({ title, company, years, side, isLast }) => {
 
       {/* İçerik div'i */}
       <div className={`flex ${isLeft ? "justify-start" : "justify-end"}`}>
-        <div className="w-1/2 px-4">
+        <div className="w-1/2  px-0 sm:px-4">
           <div
             className={`p-4 pt-0 -mt-3 rounded-lg ${
               isLeft ? "mr-auto" : "ml-auto"
             }`}
           >
-            <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-            <p className="text-sm text-secondary mb-1">{company}</p>
-            <div className="flex items-center text-gray-400 text-sm">
-              {years ? <LuCalendarDays className="mr-1 text-lg" /> : ""}
+            <h3 className="text-md sm:text-lg font-semibold text-gray-800">{title}</h3>
+            <p className="text-[14px] sm:text-sm text-secondary mb-1">{company}</p>
+            <div className="flex items-center text-gray-400 text-xs sm:text-sm">
+              {years ? <LuCalendarDays className="-mt-[3px] sm:mt-0 mr-1 text-md sm:text-lg" /> : ""}
               <span>{years}</span>
             </div>
           </div>

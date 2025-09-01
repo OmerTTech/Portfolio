@@ -6,6 +6,7 @@ import MobileNavbar from "../Components/Mobile/MobileNavbar";
 import AboutMe from "../Components/AboutMe/AboutMe";
 import Skills from "../Components/Skills";
 import Qualification from "../Components/Qualification/Qualification";
+import Portfolio from "../Components/Portfolio/Portfolio";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,22 +49,24 @@ const PublicHome = () => {
           <MainSection />
         </Element>
 
-        <Element name="about">
+        <Element name="about" className="ps-4">
           <section className="pt-50">
             <AboutMe />
           </section>
-          <section className="pt-50">
+          <section className="pt-30">
             <Qualification />
           </section>
         </Element>
 
         <Element name="skills">
-          <section className="pt-50">
-            <Skills/>
+          <section className="pt-30">
+            <Skills />
           </section>
         </Element>
         <Element name="portfolio">
-          <section className="py-20 h-[120vh]">portfolio</section>
+          <section className="pt-30">
+            <Portfolio />
+          </section>
         </Element>
         <Element name="contact">
           <section className="h-[120vh]">contact</section>

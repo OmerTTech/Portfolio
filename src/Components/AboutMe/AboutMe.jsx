@@ -20,7 +20,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-4xl font-[600]">About Me</h1>
         <p className="text-sm text-dark-hover">My Introduction</p>
@@ -30,11 +30,11 @@ const AboutMe = () => {
           <ImgSlider currentImageIndex={currentSlideIndex} />
         </div>
         <div className="w-full md:w-[40%] flex flex-col pt-3">
-          <div className="text-center md:text-start text-secondary pe-5 h-[290px] overflow-y-auto">
-            <h2 className="text-2xl font-semibold mb-2">
+          <div className="text-center md:text-start pe-5 h-[290px] overflow-y-auto">
+            <h2 className="text-2xl font-semibold mb-2 text-hover">
               {slidesData[currentSlideIndex].title}
             </h2>
-            <p>{slidesData[currentSlideIndex].text}</p>
+            <p className="text-supdark-hover">{slidesData[currentSlideIndex].text}</p>
           </div>
 
           <div className="flex flex-col justify-center items-center pe-5">
