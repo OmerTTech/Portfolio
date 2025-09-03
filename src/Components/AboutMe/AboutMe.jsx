@@ -34,14 +34,16 @@ const AboutMe = () => {
             <h2 className="text-2xl font-semibold mb-2 text-hover">
               {slidesData[currentSlideIndex].title}
             </h2>
-            <p className="text-supdark-hover">{slidesData[currentSlideIndex].text}</p>
+            <p className="text-moredark-hover">
+              {slidesData[currentSlideIndex].text}
+            </p>
           </div>
 
           <div className="flex flex-col justify-center items-center pe-5">
             <div className="flex justify-center items-center mt-5 gap-5 sm:gap-7 md:gap-4">
               <button
                 onClick={handlePrevSlide}
-                className="text-4xl md:text-3xl text-dark-hover hover:text-supdark-hover"
+                className="text-4xl md:text-3xl text-dark-hover hover:text-moredark-hover"
               >
                 <FaArrowLeft />
               </button>
@@ -60,7 +62,7 @@ const AboutMe = () => {
 
               <button
                 onClick={handleNextSlide}
-                className="text-4xl md:text-3xl text-dark-hover hover:text-supdark-hover"
+                className="text-4xl md:text-3xl text-dark-hover hover:text-moredark-hover"
               >
                 <FaArrowRight />
               </button>
