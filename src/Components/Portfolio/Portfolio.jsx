@@ -22,12 +22,12 @@ const Portfolio = () => {
   const currentProject = portfolioSlides[currentSlideIndex];
 
   return (
-    <div className="py-20">
+    <div className="pt-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <h1 className="text-4xl font-[600]">Portfolio</h1>
         <p className="text-sm text-dark-hover">Most recent work</p>
       </div>
-      
+
       {/* Ana Flex Konteyneri */}
       <div className="flex">
         {/* Sol Ok Div'i */}
@@ -87,7 +87,7 @@ const Portfolio = () => {
           </button>
         </div>
       </div>
-      
+
       <div className="flex justify-center items-center mt-10 gap-3">
         {portfolioSlides.map((_, index) => (
           <span

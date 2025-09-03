@@ -47,7 +47,7 @@ const MobileNavbar = ({isScrolled}) => {
               <div className="p-6 pb-2 *:*:hover:text-dark-hover">
                 <div className="grid grid-cols-12 gap-6.5 *:cursor-pointer ">
                   <span className={`col-span-4 pt-2 py-1 ${isScrolled ? "" : "active"}`}>
-                    <ScrollLink to="home" offset={0}>
+                    <ScrollLink to="home" offset={-300}>
                       <div className="flex items-center justify-center">
                         <p className="flex flex-col items-center justify-center">
                           <BiHomeAlt className="text-2xl" />
@@ -58,7 +58,7 @@ const MobileNavbar = ({isScrolled}) => {
                   </span>
 
                   <span className="col-span-4 pt-2 py-1">
-                    <ScrollLink to="about" offset={0}>
+                    <ScrollLink to="about" offset={175}>
                       <div className="flex items-center justify-center">
                         <p className="flex flex-col items-center justify-center">
                           <GoPerson className="text-2xl drop-shadow-3xs drop-shadow-black" />
@@ -69,7 +69,7 @@ const MobileNavbar = ({isScrolled}) => {
                   </span>
 
                   <span className="col-span-4 pt-2 py-1">
-                    <ScrollLink to="skills" offset={40}>
+                    <ScrollLink to="skills" offset={175}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
                           <FiFileText className="text-xl" />
@@ -80,7 +80,7 @@ const MobileNavbar = ({isScrolled}) => {
                   </span>
 
                   <span className="col-span-6 ms-15 pt-2 py-1">
-                    <ScrollLink to="portfolio" offset={50}>
+                    <ScrollLink to="portfolio" offset={175}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
                           <IoImageOutline className="text-2xl drop-shadow-6xs drop-shadow-black" />
@@ -91,7 +91,7 @@ const MobileNavbar = ({isScrolled}) => {
                   </span>
 
                   <span className="col-span-6 me-15 pt-2 py-1">
-                    <ScrollLink to="contact" offset={50}>
+                    <ScrollLink to="contact" offset={0}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col flex-nowrap items-center justify-center">
                           <VscSend className="text-2xl drop-shadow-4xs drop-shadow-black" />

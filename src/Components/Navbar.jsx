@@ -24,13 +24,13 @@ const Navbar = ({ isScrolled }) => {
               <li>Home</li>
             </ScrollLink>
           </span>
-          <ScrollLink to="about" offset={100}>
+          <ScrollLink to="about" offset={85}>
             <li>About</li>
           </ScrollLink>
-          <ScrollLink to="skills" offset={175}>
+          <ScrollLink to="skills" offset={85}>
             <li>Skills</li>
           </ScrollLink>
-          <ScrollLink to="portfolio" offset={150}>
+          <ScrollLink to="portfolio" offset={85}>
             <li>Portfolio</li>
           </ScrollLink>
           <ScrollLink to="contact">
