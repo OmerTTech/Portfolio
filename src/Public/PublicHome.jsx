@@ -39,7 +39,7 @@ const PublicHome = () => {
     <div className="flex flex-col items-center justify-center">
       <div
         className={`w-full fixed bottom-0 sm:bottom-auto sm:top-0 z-50 flex flex-col items-center transition ease-in sm:ease-in-out ${
-          scrollHandler ? "shadow-nav-mobile sm:shadow-nav-pc" : ""
+          scrollHandler ? "shadow-nav-mobile sm:shadow-nav-pc dark:shadow-nav-mobile-white dark:sm:shadow-nav-pc-white" : ""
         }`}
       >
         <Navbar isScrolled={isScrolled} />

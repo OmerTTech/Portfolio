@@ -1,18 +1,26 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-main: #5376cb;
   --color-hover: #3154a9;
   --color-light-hover: #6487dc;
+  --color-morelight-hover: #7598ed;
+  --color-suplight-hover: #86a9fe;
   --color-dark-hover: #4265ba;
   --color-moredark-hover: #3154a9;
   --color-supdark-hover: #204398;
   --color-white: #f5f5f5;
+  --color-body-dark: #191627;
   --color-dark: #161a4c;
   --color-secondary: #71717b;
 
+  /* dark */
   --shadow-nav-mobile: 0px 1px 3px 0.5px #00000033;
   --shadow-nav-pc: 0px -1px 3px 0.5px #00000033;
+  /* white */
+  --shadow-nav-mobile-white: 0px 1px 3px 0.5px #ffffff22;
+  --shadow-nav-pc-white: 0px -1px 3px 0.5px #ffffff22;
 
   --drop-shadow-2xs: 0 0px 0.5px rgba(0, 0, 0, 0.1);
   --drop-shadow-3xs: 0 0px 0.375px rgba(0, 0, 0, 0.1);

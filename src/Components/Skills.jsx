@@ -24,7 +24,7 @@ const skillsData = [
   {
     name: "JavaScript",
     icon: (
-      <div className="relative flex items-center justify-center bg-black rounded w-10 h-10">
+      <div className="relative flex items-center justify-center bg-dark rounded w-10 h-10">
         <FaJsSquare className="absolute" size={50} color="#F7DF1E" />
       </div>
     ),
@@ -54,7 +54,7 @@ const Skills = () => {
     <div className="flex flex-col items-center justify-center pt-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <h1 className="text-4xl font-[600]">Skills</h1>
-        <p className="text-sm text-dark-hover">My tech stack</p>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">My tech stack</p>
       </div>
       <div className="grid grid-cols-3 gap-x-10 sm:gap-x-20 md:gap-x-25 lg:gap-x-30 gap-y-4">
         {skillsData.map((skill, index) => (
@@ -65,7 +65,7 @@ const Skills = () => {
             <div className="w-16 h-16 mb-0 flex items-center justify-center rotate-0 hover:rotate-20 transition-all duration-75">
               {skill.icon}
             </div>
-            <p className="text-sm text-dark-hover font-[400] cursor-default">{skill.name}</p>
+            <p className="text-sm text-dark-hover dark:text-suplight-hover font-[400] cursor-default">{skill.name}</p>
           </div>
         ))}
       </div>

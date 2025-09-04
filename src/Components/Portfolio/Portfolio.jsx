@@ -25,7 +25,7 @@ const Portfolio = () => {
     <div className="pt-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <h1 className="text-4xl font-[600]">Portfolio</h1>
-        <p className="text-sm text-dark-hover">Most recent work</p>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">Most recent work</p>
       </div>
 
       {/* Ana Flex Konteyneri */}
@@ -34,7 +34,7 @@ const Portfolio = () => {
         <div className="w-[5%] flex justify-center items-center h-[320px]">
           <button
             onClick={handlePrevSlide}
-            className="text-5xl text-main hover:text-moredark-hover transition-colors duration-300 hidden md:block"
+            className="text-5xl text-main dark:text-light-hover hover:text-moredark-hover transition-colors duration-300 hidden md:block"
           >
             <FaArrowLeft />
           </button>
@@ -54,10 +54,10 @@ const Portfolio = () => {
             </div>
 
             <div className="w-full md:w-[40%] flex flex-col pt-3 items-center md:items-start text-center md:text-left">
-              <h2 className="text-4xl font-semibold mb-3 text-hover">
+              <h2 className="text-4xl font-semibold mb-3 text-hover dark:text-suplight-hover">
                 {currentProject.title}
               </h2>
-              <p className="text-lg text-moredark-hover mb-6 max-w-md whitespace-pre-line">
+              <p className="text-lg text-moredark-hover dark:text-morelight-hover mb-6 max-w-md whitespace-pre-line">
                 {currentProject.text}
               </p>
               <a
@@ -81,7 +81,7 @@ const Portfolio = () => {
         <div className="w-[5%] flex justify-center items-center h-[320px]">
           <button
             onClick={handleNextSlide}
-            className="text-5xl text-main hover:text-moredark-hover transition-colors duration-300 hidden md:block"
+            className="text-5xl text-main dark:text-light-hover hover:text-moredark-hover transition-colors duration-300 hidden md:block"
           >
             <FaArrowRight />
           </button>

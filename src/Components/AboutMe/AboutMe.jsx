@@ -23,7 +23,7 @@ const AboutMe = () => {
     <div>
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-4xl font-[600]">About Me</h1>
-        <p className="text-sm text-dark-hover">My Introduction</p>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">My Introduction</p>
       </div>
       <div className="flex flex-col md:flex-row  md:justify-around p-5 pt-15 relative">
         <div className="w-full md:w-[40%] object-contain mb-5 md:mb-0">
@@ -31,10 +31,10 @@ const AboutMe = () => {
         </div>
         <div className="w-full md:w-[40%] flex flex-col pt-3">
           <div className="text-center md:text-start pe-5 h-[290px] overflow-y-auto">
-            <h2 className="text-2xl font-semibold mb-2 text-hover">
+            <h2 className="text-2xl font-semibold mb-2 text-hover dark:text-suplight-hover">
               {slidesData[currentSlideIndex].title}
             </h2>
-            <p className="text-moredark-hover">
+            <p className="text-moredark-hover dark:text-morelight-hover">
               {slidesData[currentSlideIndex].text}
             </p>
           </div>
@@ -43,7 +43,7 @@ const AboutMe = () => {
             <div className="flex justify-center items-center mt-5 gap-5 sm:gap-7 md:gap-4">
               <button
                 onClick={handlePrevSlide}
-                className="text-4xl md:text-3xl text-dark-hover hover:text-moredark-hover"
+                className="text-4xl md:text-3xl text-dark-hover dark:text-light-hover hover:text-moredark-hover"
               >
                 <FaArrowLeft />
               </button>
@@ -54,15 +54,15 @@ const AboutMe = () => {
                   onClick={() => setCurrentSlideIndex(index)}
                   className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
                     currentSlideIndex === index
-                      ? "bg-supdark-hover"
-                      : "bg-light-hover"
+                      ? "bg-supdark-hover dark:bg-morelight-hover"
+                      : "bg-light-hover dark:bg-moredark-hover"
                   }`}
                 />
               ))}
 
               <button
                 onClick={handleNextSlide}
-                className="text-4xl md:text-3xl text-dark-hover hover:text-moredark-hover"
+                className="text-4xl md:text-3xl text-dark-hover dark:text-light-hover hover:text-moredark-hover"
               >
                 <FaArrowRight />
               </button>

@@ -11,14 +11,14 @@ const Qualification = () => {
     <div className="py-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <h1 className="text-4xl font-[600]">Qualification</h1>
-        <p className="text-sm text-dark-hover">My personal journey</p>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">My personal journey</p>
       </div>
 
       <div className="flex justify-center gap-8 mb-12 *:cursor-pointer">
         <button
           className={`flex items-center gap-2 py-2 px-4 rounded-lg transition-colors duration-300 ${
             activeTab === "work"
-              ? "text-main bg-sky-100"
+              ? "text-main dark:text-hover bg-sky-100"
               : "text-secondary hover:text-main"
           }`}
           onClick={() => setActiveTab("work")}
@@ -29,7 +29,7 @@ const Qualification = () => {
         <button
           className={`flex items-center gap-2 py-2 px-4 rounded-lg transition-colors duration-300 ${
             activeTab === "education"
-              ? "text-main bg-sky-100"
+              ? "text-main dark:text-hover bg-sky-100"
               : "text-secondary hover:text-main"
           }`}
           onClick={() => setActiveTab("education")}
@@ -71,8 +71,8 @@ const TimelineItem = ({ title, company, years, side, isLast }) => {
               isLeft ? "mr-auto" : "ml-auto"
             }`}
           >
-            <h3 className="text-md sm:text-lg font-semibold text-gray-800">{title}</h3>
-            <p className="text-[14px] sm:text-sm text-secondary mb-1">{company}</p>
+            <h3 className="text-md sm:text-lg font-semibold text-dark dark:text-morelight-hover">{title}</h3>
+            <p className="text-[14px] sm:text-sm text-secondary dark:text-white mb-1">{company}</p>
             <div className="flex items-center text-gray-400 text-xs sm:text-sm">
               {years ? <LuCalendarDays className="-mt-[3px] sm:mt-0 mr-1 text-md sm:text-lg" /> : ""}
               <span>{years}</span>
