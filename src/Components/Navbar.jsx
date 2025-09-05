@@ -12,7 +12,7 @@ const Navbar = ({ isScrolled }) => {
   return (
     <nav className="max-w-[1000px] w-full hidden sm:flex items-center justify-between py-5.5 lg:px-2 sm:px-5 sm:ps-8 lg:ps-0 text-sm font-[500] bg-white dark:bg-body-dark">
       <ScrollLink to="home">
-        <div className="flex items-center text-[15px] tracking-widest cursor-pointer text-black dark:text-white">
+        <div className="flex items-center text-[15px] tracking-widest cursor-pointer text-black dark:text-suplight-hover">
           <img
             src={profile}
             className="hover:contrast-125 hover:brightness-95 drop-shadow-black drop-shadow-2xs rounded-full"
@@ -23,9 +23,9 @@ const Navbar = ({ isScrolled }) => {
         </div>
       </ScrollLink>
       <div>
-        <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
+        <ul className="flex items-center gap-5 *:px-2 *:py-0 text-[13.5px] tracking-wide *:hover:*:!text-hover dark:*:hover:*:!text-morelight-hover *:cursor-pointer">
           <span
-            className={`px-2 py-0 hover:text-hover cursor-pointer ${
+            className={`px-2 py-0 cursor-pointer ${
               isScrolled ? "" : "active"
             }`}
           >

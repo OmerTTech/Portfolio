@@ -43,7 +43,7 @@
 }
 
 .active {
-  color: var(--color-main);
+  color: var(--color-light-hover);
 }
 
 body {

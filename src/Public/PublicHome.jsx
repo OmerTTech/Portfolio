@@ -8,6 +8,7 @@ import Skills from "../Components/Skills";
 import Qualification from "../Components/Qualification/Qualification";
 import Portfolio from "../Components/Portfolio/Portfolio";
 import NewProject from "../Components/NewProject";
+import ContactMe from "../Components/ContactMe/ContactMe";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,10 +70,13 @@ const PublicHome = () => {
             <Portfolio />
           </section>
         </Element>
+
         <NewProject/>
 
         <Element name="contact">
-          <section className="h-[120vh]">contact</section>
+          <section className="pt-30">
+            <ContactMe/>
+          </section>
         </Element>
       </div>
     </div>

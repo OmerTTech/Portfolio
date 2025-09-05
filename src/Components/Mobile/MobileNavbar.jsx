@@ -6,19 +6,23 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import Drawer from "@mui/material/Drawer";
 import { BiHomeAlt } from "react-icons/bi";
 import { GoPerson } from "react-icons/go";
-import { LiaFileAltSolid } from "react-icons/lia";
 import { IoImageOutline } from "react-icons/io5";
 import { VscSend } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
-import { FiFileText } from "react-icons/fi";
+import { FiFileText, FiSun } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { darkmodeHandler } from "../../Store/Slices/Darkmode";
 
-const MobileNavbar = ({isScrolled}) => {
+const MobileNavbar = ({ isScrolled }) => {
+  const isDarkmode = useSelector((state) => state.darkmode.darkmode);
+  const dispatch = useDispatch();
+
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-7  text-sm font-[500] bg-white">
+    <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-7  text-sm font-[500] bg-white dark:bg-body-dark">
       <ScrollLink to="home">
-        <div className="flex items-center text-[15px] tracking-widest scale-110 cursor-pointer !text-black">
+        <div className="flex items-center text-[15px] tracking-widest scale-110 cursor-pointer text-black dark:text-suplight-hover">
           <img
             src={profile}
             className="hover:contrast-125 hover:brightness-95 drop-shadow-black drop-shadow-2xs rounded-full"
@@ -29,9 +33,12 @@ const MobileNavbar = ({isScrolled}) => {
         </div>
       </ScrollLink>
       <div>
-        <ul className="flex items-center gap-4 *:px-5 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover *:cursor-pointer">
-          <li className="text-xl !p-0 hover:text-main transition">
-            <RiMoonLine />
+        <ul className="flex items-center gap-4 *:px-5 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover dark:*:hover:*:text-light-hover *:cursor-pointer ">
+          <li
+            onClick={() => dispatch(darkmodeHandler())}
+            className="text-2xl !p-0 hover:text-main transition"
+          >
+            {isDarkmode ? <FiSun /> : <RiMoonLine />}
           </li>
           <li className="text-3xl hover:text-main transition">
             <AiOutlineAppstore onClick={() => setOpen(true)} />
@@ -44,9 +51,17 @@ const MobileNavbar = ({isScrolled}) => {
               }}
               BackdropProps={{ invisible: true }}
             >
-              <div className="p-6 pb-2 *:*:hover:text-dark-hover">
-                <div className="grid grid-cols-12 gap-6.5 *:cursor-pointer ">
-                  <span className={`col-span-4 pt-2 py-1 ${isScrolled ? "" : "active"}`}>
+              <div
+                className={`p-6 pb-2 *:*:hover:!text-dark-hover dark:*:*:hover:!text-suplight-hover bg-white dark:bg-body-dark ${
+                  isDarkmode ? "dark dark:bg-body-dark text-white" : ""
+                }`}
+              >
+                <div className="grid grid-cols-12 gap-6.5 *:cursor-pointer text-dark dark:text-white">
+                  <span
+                    className={`col-span-4 pt-2 py-1 ${
+                      isScrolled ? "" : "active"
+                    }`}
+                  >
                     <ScrollLink to="home" offset={-300}>
                       <div className="flex items-center justify-center">
                         <p className="flex flex-col items-center justify-center">
@@ -95,7 +110,9 @@ const MobileNavbar = ({isScrolled}) => {
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col flex-nowrap items-center justify-center">
                           <VscSend className="text-2xl drop-shadow-4xs drop-shadow-black" />
-                          <span className="text-md text-nowrap">Contact Me</span>
+                          <span className="text-md text-nowrap">
+                            Contact Me
+                          </span>
                         </p>
                       </div>
                     </ScrollLink>
