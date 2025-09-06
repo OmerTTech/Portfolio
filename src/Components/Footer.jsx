@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         {/* Linkler */}
-        <ul className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm tracking-wide mb-6 sm:mb-0">
+        <ul className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-lg sm:text-sm tracking-wide mb-6 sm:mb-">
           <ScrollLink to="about" offset={85}>
             <li className="text-white hover:text-superlight-hover dark:hover:text-suplight-hover">
               About
@@ -75,7 +75,7 @@ const Footer = () => {
         </ul>
 
         {/* Sosyal Medya İkonları */}
-        <div className="flex gap-4 text-xl text-white *:hover:!text-suplight-hover">
+        <div className="flex mt-2 sm:mt-0 gap-12 sm:gap-4 text-3xl sm:text-xl text-white *:hover:!text-suplight-hover">
           <a target="_blank" href="https://www.linkedin.com/in/Omerttech">
             <FaLinkedinIn className="drop-shadow-black drop-shadow-2xs " />
           </a>

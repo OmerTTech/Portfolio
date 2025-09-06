@@ -10,6 +10,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import toast from "react-hot-toast";
+import {MyPhone, MyPhoneLink, MyEmail, MyEmailLink, MyLocation} from "./ContactData.jsx"
 
 const ContactMe = () => {
   const initialValues = {
@@ -53,18 +54,24 @@ const ContactMe = () => {
             <FaPhone className="text-2xl text-main" />
             <div>
               <h3 className="text-lg font-medium">Call Me</h3>
-              <p className="text-sm text-supdark-hover dark:text-suplight-hover">
-                +994 70 554 42 55
-              </p>
+              <a
+                href={MyPhoneLink}
+                className="text-sm/1 !text-supdark-hover dark:!text-suplight-hover"
+              >
+                {MyPhone}
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <FaEnvelope className="text-2xl text-main" />
             <div>
               <h3 className="text-lg font-medium">Email</h3>
-              <p className="text-sm text-supdark-hover dark:text-suplight-hover">
-                omer.tapdiqov@gmail.com
-              </p>
+              <a
+                href={MyEmailLink}
+                className="text-sm !text-supdark-hover dark:!text-suplight-hover"
+              >
+                {MyEmail}
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -72,7 +79,7 @@ const ContactMe = () => {
             <div>
               <h3 className="text-lg font-medium">Location</h3>
               <p className="text-sm text-supdark-hover dark:text-suplight-hover">
-                Azerbaijan, Baku
+                {MyLocation}
               </p>
             </div>
           </div>
