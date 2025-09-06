@@ -1,39 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ScrollLink from "./ScrollLink";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import profile from "../Assets/profile.png";
-import { SlSocialLinkedin } from "react-icons/sl";
 import { FiGithub } from "react-icons/fi";
-import { LiaLinkedin } from "react-icons/lia";
-import { CiLinkedin } from "react-icons/ci";
+import useWindowSize from "../Hooks/useWindowSize";
 
 const Footer = () => {
-  const [offsetValue, setOffsetValue] = useState(850);
+  const { width } = useWindowSize();
 
-  useEffect(() => {
-    const handleResize = () => {
-      // Ekran genişliği 640px'den küçükse (Tailwind sm breakpoint'i)
-      if (window.innerWidth < 640) {
-        setOffsetValue(35);
-      } else {
-        setOffsetValue(850);
-      }
-    };
+  const qualificationOffset = width > 640 ? 850 : 1600;
 
-    // Component yüklendiğinde ve pencere boyutu değiştiğinde çalıştır
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Temizleme fonksiyonu: component unmount olduğunda event listener'ı kaldır
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <footer className="w-full py-16 bg-main dark:bg-body-dark text-white">
       <div className="max-w-[1000px] mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-start px-4 md:px-0">
@@ -57,7 +33,7 @@ const Footer = () => {
               About
             </li>
           </ScrollLink>
-          <ScrollLink to="qualification" offset={offsetValue}>
+          <ScrollLink to="qualification" offset={qualificationOffset}>
             <li className="text-white hover:text-superlight-hover dark:hover:text-suplight-hover">
               Qualification
             </li>
@@ -75,7 +51,7 @@ const Footer = () => {
         </ul>
 
         {/* Sosyal Medya İkonları */}
-        <div className="flex mt-2 sm:mt-0 gap-12 sm:gap-4 text-3xl sm:text-xl text-white *:hover:!text-suplight-hover">
+        <div className="flex mt-4 sm:mt-0 gap-12 sm:gap-4 text-3xl sm:text-xl text-white *:hover:!text-suplight-hover">
           <a target="_blank" href="https://www.linkedin.com/in/Omerttech">
             <FaLinkedinIn className="drop-shadow-black drop-shadow-2xs " />
           </a>

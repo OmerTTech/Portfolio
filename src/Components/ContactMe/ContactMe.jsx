@@ -10,9 +10,10 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import toast from "react-hot-toast";
-import {MyPhone, MyPhoneLink, MyEmail, MyEmailLink, MyLocation} from "./ContactData.jsx"
+import ContactData from "./ContactData.jsx"
 
 const ContactMe = () => {
+  const {MyPhone, MyPhoneLink, MyEmail, MyEmailLink, MyLocation} = ContactData
   const initialValues = {
     name: "",
     email: "",
