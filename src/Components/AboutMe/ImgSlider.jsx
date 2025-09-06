@@ -10,7 +10,7 @@ const images = [image1, image2, image3, image4, image5, image6];
 // Bileşen artık bir prop (currentImageIndex) alıyor.
 const ImgSlider = ({ currentImageIndex }) => {
   return (
-    <div>
+    <div className="-ms-3">
       <div
         className="w-full h-100 sm:h-86 bg-cover sm:bg-contain md:bg-cover bg-no-repeat bg-center transition-all duration-500 drop-shadow-sm drop-shadow-secondary" // Geçiş süresi 500ms'ye düşürüldü
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}

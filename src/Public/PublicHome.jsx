@@ -9,12 +9,14 @@ import Qualification from "../Components/Qualification/Qualification";
 import Portfolio from "../Components/Portfolio/Portfolio";
 import NewProject from "../Components/NewProject";
 import ContactMe from "../Components/ContactMe/ContactMe";
+import ScrollToTop from "../Components/ScrollToTop";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollHandler, setScrollHandler] = useState(false);
 
   useEffect(() => {
+
     const handleScroll = () => {
       if (window.scrollY > 400) {
         setIsScrolled(true);
@@ -79,6 +81,7 @@ const PublicHome = () => {
           </section>
         </Element>
       </div>
+      <ScrollToTop/>
     </div>
   );
 };

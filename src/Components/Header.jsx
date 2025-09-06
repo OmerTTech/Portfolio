@@ -27,7 +27,7 @@ const Header = () => {
           wrapper="span"
         />
         <div className="mt-6">
-          <ScrollLink to="contact" duration={2250}>
+          <ScrollLink to="contact" duration={2250} offset={100}>
             <Button
               variant="contained"
               className="!capitalize !p-3 lg:!p-2.5 !text-lg !font-[500] md:!pe-3.5 lg:!pe-3 !bg-main hover:!bg-dark-hover ease"

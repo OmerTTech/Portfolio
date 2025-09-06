@@ -11,7 +11,7 @@ const Navbar = ({ isScrolled }) => {
   const dispatch = useDispatch();
   return (
     <nav className="max-w-[1000px] w-full hidden sm:flex items-center justify-between py-5.5 lg:px-2 sm:px-5 sm:ps-8 lg:ps-0 text-sm font-[500] bg-white dark:bg-body-dark">
-      <ScrollLink to="home">
+      <ScrollLink to="home" offset={-300}>
         <div className="flex items-center text-[15px] tracking-widest cursor-pointer text-black dark:text-suplight-hover">
           <img
             src={profile}
