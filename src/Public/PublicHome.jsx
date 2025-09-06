@@ -10,13 +10,13 @@ import Portfolio from "../Components/Portfolio/Portfolio";
 import NewProject from "../Components/NewProject";
 import ContactMe from "../Components/ContactMe/ContactMe";
 import ScrollToTop from "../Components/ScrollToTop";
+import Footer from "../Components/Footer";
 
 const PublicHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollHandler, setScrollHandler] = useState(false);
 
   useEffect(() => {
-
     const handleScroll = () => {
       if (window.scrollY > 400) {
         setIsScrolled(true);
@@ -42,7 +42,9 @@ const PublicHome = () => {
     <div className="flex flex-col items-center justify-center">
       <div
         className={`w-full fixed bottom-0 sm:bottom-auto sm:top-0 z-50 flex flex-col items-center transition ease-in sm:ease-in-out ${
-          scrollHandler ? "shadow-nav-mobile sm:shadow-nav-pc dark:shadow-nav-mobile-white dark:sm:shadow-nav-pc-white" : ""
+          scrollHandler
+            ? "shadow-nav-mobile sm:shadow-nav-pc dark:shadow-nav-mobile-white dark:sm:shadow-nav-pc-white"
+            : ""
         }`}
       >
         <Navbar isScrolled={isScrolled} />
@@ -58,7 +60,9 @@ const PublicHome = () => {
             <AboutMe />
           </section>
           <section className="pt-30">
-            <Qualification />
+            <Element name="qualification">
+              <Qualification />
+            </Element>
           </section>
         </Element>
 
@@ -73,15 +77,16 @@ const PublicHome = () => {
           </section>
         </Element>
 
-        <NewProject/>
+        <NewProject />
 
         <Element name="contact">
           <section className="pt-30">
-            <ContactMe/>
+            <ContactMe />
           </section>
         </Element>
       </div>
-      <ScrollToTop/>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 };

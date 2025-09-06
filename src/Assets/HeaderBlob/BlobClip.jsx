@@ -16,7 +16,7 @@ const BlobClip = () => {
         <img
           src={OmerTTech}
           alt="My image"
-          className="w-full h-full object-contain saturate-75 brightness-125 drop-shadow-2xl decoration-black scale-110 mt-5 sm:-ms-7 md:ms-auto"
+          className="w-full h-full object-contain saturate-70 brightness-125 drop-shadow-2xl decoration-black scale-110 mt-5 sm:-ms-7 md:ms-auto"
         />
       </div>
     </div>
