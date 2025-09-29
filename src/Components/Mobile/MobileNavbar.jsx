@@ -11,7 +11,7 @@ import { VscSend } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
 import { FiFileText, FiSun } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { darkmodeHandler } from "../../Store/Slices/Darkmode";
+import { darkmodeHandler } from "../../Store/Slices/DarkmodeSlice.jsx";
 
 const MobileNavbar = ({ isScrolled }) => {
   const isDarkmode = useSelector((state) => state.darkmode.darkmode);

@@ -3,7 +3,7 @@ import profile from "../Assets/profile.png";
 import { RiMoonLine } from "react-icons/ri";
 import ScrollLink from "./ScrollLink";
 import { useDispatch, useSelector } from "react-redux";
-import { darkmodeHandler } from "../Store/Slices/Darkmode";
+import { darkmodeHandler } from "../Store/Slices/DarkmodeSlice.jsx";
 import { FiSun } from "react-icons/fi";
 
 const Navbar = ({ isScrolled }) => {

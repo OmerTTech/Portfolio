@@ -11,7 +11,7 @@ const Footer = () => {
   const qualificationOffset = width > 640 ? 850 : 1600;
 
   return (
-    <footer className="w-full py-16 bg-main dark:bg-body-dark text-white">
+    <footer className="w-full py-16 bg-main dark:bg-body-dark text-white shadow-nav-mobile-white">
       <div className="max-w-[1000px] mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-start px-4 md:px-0">
         {/* Logo ve unvan */}
         <div className="flex flex-col !items-center sm:items-start mb-6 sm:mb-0">
