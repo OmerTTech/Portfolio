@@ -25,4 +25,15 @@ export const education = [
     company: "ATL Academy",
     years: "12.2023 - 01.2025",
   },
+  {
+    title: "Bachelor degree- IT",
+    company: "Baku Business University",
+    years: "09.2025 - Present",
+  },
 ];
+const QualfManuelDatas = { // Diziden Obje yapısına geçmek daha esnek olur
+    workExperience,
+    education
+};
+
+export default QualfManuelDatas;

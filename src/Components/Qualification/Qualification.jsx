@@ -1,25 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { LuCalendarDays } from "react-icons/lu";
-import { API } from "../../Services/Api.js"; 
-import { useSelector } from "react-redux"; 
+import { API } from "../../Services/Api.js";
+import { useSelector } from "react-redux";
+
+import QualfManuelDatas from "./QualfData.js";
 
 const Qualification = () => {
   const [activeTab, setActiveTab] = useState("workExperience");
-  const [qualfData, setQualfData] = useState([]); 
+  const [qualfData, setQualfData] = useState([]);
   const lang = useSelector((state) => state.language.lang);
 
   useEffect(() => {
     const fetchQualfData = async () => {
       try {
-        const response = await API.qualf.getByCategory(activeTab); 
-        setQualfData(response.data);
+        const response = await API.qualf.getByCategory(activeTab);
+        const apiData = response.data;
+
+        // 1. API'den veri gelmezse (boş dizi, null, undefined)
+        if (!apiData || apiData.length === 0) {
+          console.warn("API'den veri gelmedi. Manuel veriye geçiliyor.");
+
+          // 2. activeTab'a göre manuel veriyi seç
+          setQualfData(QualfManuelDatas[activeTab] || []);
+        } else {
+          // API'den başarılı bir şekilde veri geldi
+          console.log("API'den gelen veri:", apiData);
+          setQualfData(apiData);
+        }
       } catch (error) {
-        console.error("Nitelik verisi çekilirken hata oluştu:", error);
+        // 3. API çağrısı HATA verirse (ağ hatası, 404, 500 vb.)
+        console.error(
+          "Nitelik verisi çekilirken hata oluştu. Manuel veriye geçiliyor:",
+          error
+        );
+
+        // activeTab'a göre manuel veriyi seç
+        setQualfData(QualfManuelDatas[activeTab] || []);
       }
     };
     fetchQualfData();
-  }, [activeTab, lang]); 
+  }, [activeTab, lang]);
 
   return (
     <div className="py-20">
@@ -57,11 +78,11 @@ const Qualification = () => {
 
       <div className="relative mx-auto max-w-xl px-0 sm:px-6 lg:px-8">
         {qualfData.length === 0 ? (
-          <div>Loading...</div>
+          <div>Loading...</div> // Buraya API'den gelmediyse "Veri bulunamadı" da eklenebilir.
         ) : (
           qualfData.map((item, index) => (
             <TimelineItem
-              key={item._id}
+              key={item._id || index} // Manuel veride _id olmayacağı için index'i de ekledim
               {...item}
               isLeft={index % 2 === 0}
               isLast={index === qualfData.length - 1}
@@ -74,6 +95,7 @@ const Qualification = () => {
 };
 
 const TimelineItem = ({ title, company, years, isLeft, isLast }) => {
+  // ... (TimelineItem kodunda değişiklik yok)
   return (
     <div className={`relative ${!isLast && "pb-8"}`}>
       {!isLast && (
