@@ -1,10 +1,8 @@
 // src/components/NewProject.jsx
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { Button } from "@mui/material";
-import ScrollLink from "./ScrollLink";
 import { TbSend2 } from "react-icons/tb";
 import NewProjectImage from "../Assets/NewProjectImage.png";
+import { Button, ScrollLink } from "react-scroll";
 
 const NewProject = () => {
   return (

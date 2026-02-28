@@ -2,7 +2,6 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Button from "@mui/material/Button";
 import { TbSend2 } from "react-icons/tb";
-import { VscSend } from "react-icons/vsc";
 import ScrollLink from "./ScrollLink";
 
 const Header = () => {

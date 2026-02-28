@@ -6,13 +6,12 @@ import {
   IoLogoSass,
 } from "react-icons/io5";
 
-import { FaJsSquare, FaNodeJs, FaFigma } from "react-icons/fa";
+import { FaJsSquare, FaNodeJs } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiMui,
   SiRedux,
   SiExpress,
-  SiFirebase,
 } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoFirebase  } from "react-icons/io5";
