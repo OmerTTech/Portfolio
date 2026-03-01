@@ -17,7 +17,15 @@ const Portfolio = () => {
     const fetchProjects = async () => {
       try {
         const response = await API.portfolio.getAll();
-        setProjects(response.data);
+        const allProjects = response.data;
+        
+        const transformedProjects = allProjects.map(project => ({
+          ...project,
+          title: project.title?.[lang] || project.title?.en || "",
+          text: project.text?.[lang] || project.text?.en || "",
+        }));
+        
+        setProjects(transformedProjects);
       } catch (error) {
         console.error("Portfolio fetch error:", error);
       } finally {

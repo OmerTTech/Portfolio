@@ -16,28 +16,29 @@ const Qualification = () => {
   useEffect(() => {
     const fetchQualfData = async () => {
       try {
-        const response = await API.qualf.getByCategory(activeTab);
-        const apiData = response.data;
+        const response = await API.qualf.getAll();
+        const allData = response.data;
 
-        // 1. API'den veri gelmezse (boş dizi, null, undefined)
-        if (!apiData || apiData.length === 0) {
+        const filteredData = allData.filter(item => item.category === activeTab);
+        
+        const transformedData = filteredData.map(item => ({
+          ...item,
+          title: item.title?.[lang] || item.title?.en || "",
+          company: item.company?.[lang] || item.company?.en || "",
+        }));
+
+        if (!transformedData || transformedData.length === 0) {
           console.warn("API'den veri gelmedi. Manuel veriye geçiliyor.");
-
-          // 2. activeTab'a göre manuel veriyi seç
           setQualfData(QualfManuelDatas[activeTab] || []);
         } else {
-          // API'den başarılı bir şekilde veri geldi
-          console.log("API'den gelen veri:", apiData);
-          setQualfData(apiData);
+          console.log("API'den gelen veri:", transformedData);
+          setQualfData(transformedData);
         }
       } catch (error) {
-        // 3. API çağrısı HATA verirse (ağ hatası, 404, 500 vb.)
         console.error(
           "Nitelik verisi çekilirken hata oluştu. Manuel veriye geçiliyor:",
           error
         );
-
-        // activeTab'a göre manuel veriyi seç
         setQualfData(QualfManuelDatas[activeTab] || []);
       }
     };

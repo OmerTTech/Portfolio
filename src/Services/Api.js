@@ -45,7 +45,7 @@ api.interceptors.response.use(
           originalRequest.headers.Authorization = `Bearer ${newToken}`;
           return api(originalRequest);
         }
-      } catch (refreshError) {
+      } catch {
         localStorage.removeItem("adminToken");
         window.location.href = "/admin";
       }
@@ -59,8 +59,7 @@ export { api };
 export const API = {
   slides: {
     getAll: () => {
-      const lang = store.getState().language.lang;
-      return api.get(`/api/slides/${lang}`);
+      return api.get("/api/slides");
     },
     create: (slide) => api.post("/api/slides", slide),
     update: (id, slide) => api.put(`/api/slides/${id}`, slide),
@@ -69,8 +68,7 @@ export const API = {
 
   portfolio: {
     getAll: () => {
-      const lang = store.getState().language.lang;
-      return api.get(`/api/portfolios/${lang}`);
+      return api.get("/api/portfolios");
     },
     create: (portfolio) => api.post("/api/portfolios", portfolio),
     update: (id, portfolio) => api.put(`/api/portfolios/${id}`, portfolio),
@@ -79,12 +77,10 @@ export const API = {
 
   qualf: {
     getAll: () => {
-      const lang = store.getState().language.lang;
-      return api.get(`/api/qualfs/${lang}`);
+      return api.get("/api/qualfs");
     },
     getByCategory: (category) => {
-      const lang = store.getState().language.lang;
-      return api.get(`/api/qualfs/${category}/${lang}`);
+      return api.get(`/api/qualfs/${category}`);
     },
     create: (qualf) => api.post("/api/qualfs", qualf),
     update: (id, qualf) => api.put(`/api/qualfs/${id}`, qualf),
@@ -98,7 +94,7 @@ export const API = {
   },
 
   messages: {
-    create: (message) => api.post("/messages", message),
-    delete: (id) => api.delete(`/messages/${id}`),
+    create: (message) => api.post("/api/messages", message),
+    delete: (id) => api.delete(`/api/messages/${id}`),
   },
 };
