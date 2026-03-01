@@ -44,7 +44,7 @@ const MobileNavbar = ({ isScrolled }) => {
         <ul className="flex items-center gap-4 *:px-5 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover dark:*:hover:*:text-light-hover *:cursor-pointer ">
           <li
             onClick={toggleLang}
-            className="text-xs !p-1.5 border border-main dark:border-white rounded hover:bg-main hover:text-white transition cursor-pointer font-semibold"
+            className="text-xs !p-1.5 mx-6 border border-main dark:border-white rounded hover:bg-main hover:text-white transition cursor-pointer font-semibold"
           >
             {lang.toUpperCase()}
           </li>

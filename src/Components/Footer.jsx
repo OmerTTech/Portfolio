@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrollLink from "./ScrollLink";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import profile from "../Assets/profile.png";
@@ -6,13 +6,25 @@ import { FiGithub } from "react-icons/fi";
 import useWindowSize from "../Hooks/useWindowSize";
 import { useSelector } from "react-redux";
 import translations from "../Utils/translations";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
   const { width } = useWindowSize();
   const lang = useSelector((state) => state.language.lang);
   const t = translations[lang];
+  const navigate = useNavigate();
+  const [clickCount, setClickCount] = useState(0);
 
   const qualificationOffset = width > 640 ? 850 : 1600;
+
+  const handleProfileClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    if (newCount >= 5) {
+      setClickCount(0);
+      navigate("/admin");
+    }
+  };
 
   return (
     <footer className="w-full py-16 bg-main dark:bg-body-dark text-white shadow-nav-mobile-white">
@@ -21,6 +33,7 @@ const Footer = () => {
           <div className="flex items-center text-[28px] font-semibold tracking-widest cursor-pointer text-white dark:text-suplight-hover">
             <img
               src={profile}
+              onClick={handleProfileClick}
               className="hover:contrast-125 hover:brightness-95 drop-shadow-black drop-shadow-2xs rounded-full transition-all duration-300"
               width={50}
               height={50}
