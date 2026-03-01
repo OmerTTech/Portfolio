@@ -6,8 +6,10 @@ const CursorTrail = () => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
 
+  const isMobile = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current || isMobile) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -16,6 +18,7 @@ const CursorTrail = () => {
 
     let mouseMoved = false;
     let isMouseInWindow = true;
+    let isTouching = false;
 
     const pointer = {
       x: window.innerWidth / 2,
@@ -46,6 +49,11 @@ const CursorTrail = () => {
       pointer.x = eX;
       pointer.y = eY;
       mouseMoved = true;
+      isTouching = true;
+    };
+
+    const handleTouchEnd = () => {
+      isTouching = false;
     };
 
     const handleResize = () => {
@@ -54,12 +62,17 @@ const CursorTrail = () => {
     };
 
     const animate = (t) => {
-      if (!mouseMoved && isMouseInWindow) {
-        pointer.x = (0.5 + 0.3 * Math.cos(0.002 * t) * Math.sin(0.005 * t)) * window.innerWidth;
-        pointer.y = (0.5 + 0.2 * Math.cos(0.005 * t) + 0.1 * Math.cos(0.01 * t)) * window.innerHeight;
+      if (!mouseMoved) {
+        animationRef.current = window.requestAnimationFrame(animate);
+        return;
       }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (isMobile && !isTouching) {
+        animationRef.current = window.requestAnimationFrame(animate);
+        return;
+      }
 
       trail.forEach((p, pIdx) => {
         const prev = pIdx === 0 ? pointer : trail[pIdx - 1];
@@ -101,6 +114,8 @@ const CursorTrail = () => {
     window.addEventListener('mouseenter', () => { isMouseInWindow = true; });
     window.addEventListener('mouseleave', () => { isMouseInWindow = false; });
     window.addEventListener('touchmove', (e) => updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY));
+    window.addEventListener('touchstart', (e) => updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY));
+    window.addEventListener('touchend', handleTouchEnd);
     window.addEventListener('resize', handleResize);
 
     handleResize();
@@ -111,6 +126,8 @@ const CursorTrail = () => {
       window.removeEventListener('mouseenter', () => { isMouseInWindow = true; });
       window.removeEventListener('mouseleave', () => { isMouseInWindow = false; });
       window.removeEventListener('touchmove', (e) => updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY));
+      window.removeEventListener('touchstart', (e) => updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY));
+      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', handleResize);
 
       if (animationRef.current) {
