@@ -1,5 +1,4 @@
 import axios from "axios";
-import { store } from "../Store/Store.jsx";
 
 const API_URL = "https://portfoliobackend-bkaz.onrender.com/";
 

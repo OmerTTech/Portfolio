@@ -18,7 +18,7 @@ const Qualification = () => {
       try {
         const response = await API.qualf.getAll();
         const allData = response.data;
-
+        
         const filteredData = allData.filter(item => item.category === activeTab);
         
         const transformedData = filteredData.map(item => ({
@@ -27,11 +27,14 @@ const Qualification = () => {
           company: item.company?.[lang] || item.company?.en || "",
         }));
 
+        console.log("Current lang:", lang);
+        console.log("API data:", allData);
+        console.log("Transformed data:", transformedData);
+        
         if (!transformedData || transformedData.length === 0) {
           console.warn("API'den veri gelmedi. Manuel veriye geçiliyor.");
           setQualfData(QualfManuelDatas[activeTab] || []);
         } else {
-          console.log("API'den gelen veri:", transformedData);
           setQualfData(transformedData);
         }
       } catch (error) {
