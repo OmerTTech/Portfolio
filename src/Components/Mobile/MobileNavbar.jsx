@@ -12,12 +12,20 @@ import { IoMdClose } from "react-icons/io";
 import { FiFileText, FiSun } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { darkmodeHandler } from "../../Store/Slices/DarkmodeSlice.jsx";
+import { setLanguage } from "../../Store/Slices/LanguageSlice.jsx";
+import { useTranslation } from "../../Hooks/useTranslation";
 
 const MobileNavbar = ({ isScrolled }) => {
   const isDarkmode = useSelector((state) => state.darkmode.darkmode);
+  const lang = useSelector((state) => state.language.lang);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const [open, setOpen] = useState(false);
+
+  const toggleLang = () => {
+    dispatch(setLanguage(lang === "en" ? "az" : "en"));
+  };
 
   return (
     <nav className="max-w-[1000px] w-full flex sm:hidden items-center justify-between gap-20 ps-8 pe-4 py-6 pb-7  text-sm font-[500] bg-white dark:bg-body-dark">
@@ -34,6 +42,12 @@ const MobileNavbar = ({ isScrolled }) => {
       </ScrollLink>
       <div>
         <ul className="flex items-center gap-4 *:px-5 *:py-0 text-[13.5px] tracking-wide *:hover:*:text-hover dark:*:hover:*:text-light-hover *:cursor-pointer ">
+          <li
+            onClick={toggleLang}
+            className="text-xs !p-1.5 border border-main dark:border-white rounded hover:bg-main hover:text-white transition cursor-pointer font-semibold"
+          >
+            {lang.toUpperCase()}
+          </li>
           <li
             onClick={() => dispatch(darkmodeHandler())}
             className="text-2xl !p-0 hover:text-main transition"
@@ -66,52 +80,52 @@ const MobileNavbar = ({ isScrolled }) => {
                       <div className="flex items-center justify-center">
                         <p className="flex flex-col items-center justify-center">
                           <BiHomeAlt className="text-2xl" />
-                          <span className="text-md">Home</span>
+                          <span className="text-md">{t("nav.home")}</span>
                         </p>
                       </div>
                     </ScrollLink>
                   </span>
 
                   <span className="col-span-4 pt-2 py-1">
-                    <ScrollLink to="about" offset={175}>
+                    <ScrollLink to="about" offset={-50}>
                       <div className="flex items-center justify-center">
                         <p className="flex flex-col items-center justify-center">
                           <GoPerson className="text-2xl drop-shadow-3xs drop-shadow-black" />
-                          <span className="text-md">About</span>
+                          <span className="text-md">{t("nav.about")}</span>
                         </p>
                       </div>
                     </ScrollLink>
                   </span>
 
                   <span className="col-span-4 pt-2 py-1">
-                    <ScrollLink to="skills" offset={175}>
+                    <ScrollLink to="skills" offset={-100}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
                           <FiFileText className="text-xl" />
-                          <span className="text-md">Skills</span>
+                          <span className="text-md">{t("nav.skills")}</span>
                         </p>
                       </div>
                     </ScrollLink>
                   </span>
 
                   <span className="col-span-6 ms-15 pt-2 py-1">
-                    <ScrollLink to="portfolio" offset={175}>
+                    <ScrollLink to="portfolio" offset={-100}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col items-center justify-center">
                           <IoImageOutline className="text-2xl drop-shadow-6xs drop-shadow-black" />
-                          <span className="text-md">Portfolio</span>
+                          <span className="text-md">{t("nav.portfolio")}</span>
                         </p>
                       </div>
                     </ScrollLink>
                   </span>
 
                   <span className="col-span-6 me-15 pt-2 py-1">
-                    <ScrollLink to="contact" offset={0}>
+                    <ScrollLink to="contact" offset={-30}>
                       <div className="flex items-center justify-center ">
                         <p className="flex flex-col flex-nowrap items-center justify-center">
                           <VscSend className="text-2xl drop-shadow-4xs drop-shadow-black" />
                           <span className="text-md text-nowrap">
-                            Contact Me
+                            {t("nav.contact")}
                           </span>
                         </p>
                       </div>

@@ -11,9 +11,14 @@ import {
 } from "react-icons/fa";
 import toast from "react-hot-toast";
 import ContactData from "./ContactData.jsx"
+import { useSelector } from "react-redux";
+import translations from "../../Utils/translations";
 
 const ContactMe = () => {
   const {MyPhone, MyPhoneLink, MyEmail, MyEmailLink, MyLocation} = ContactData
+  const lang = useSelector((state) => state.language.lang);
+  const t = translations[lang];
+  
   const initialValues = {
     name: "",
     email: "",
@@ -22,30 +27,30 @@ const ContactMe = () => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name field cannot be left blank"),
+    name: Yup.string().required(lang === "az" ? "Ad boş qala bilməz" : "Name field cannot be left blank"),
     email: Yup.string()
-      .email("Please enter a valid email address")
-      .required("Email field cannot be left blank"),
+      .email(lang === "az" ? "Düzgün email daxil edin" : "Please enter a valid email address")
+      .required(lang === "az" ? "Email boş qala bilməz" : "Email field cannot be left blank"),
     project: Yup.string().required(
-      "Project/Subject field cannot be left blank"
+      lang === "az" ? "Mövzu boş qala bilməz" : "Project/Subject field cannot be left blank"
     ),
     message: Yup.string()
-      .min(10, "Message must be at least 10 characters")
-      .required("Message field cannot be left blank"),
+      .min(10, lang === "az" ? "Mesaj ən az 10 simvol olmalıdır" : "Message must be at least 10 characters")
+      .required(lang === "az" ? "Mesaj boş qala bilməz" : "Message field cannot be left blank"),
   });
 
   const onSubmit = (values, { resetForm }) => {
     console.log("Form verileri:", values);
-    toast.success("Message sent successfully!");
+    toast.success(lang === "az" ? "Mesaj göndərildi!" : "Message sent successfully!");
     resetForm();
   };
 
   return (
     <div className="py-20 px-4 md:px-8 lg:px-16 text-gray-800 dark:text-gray-200">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
-        <h1 className="text-4xl font-[600]">Contact Me</h1>
+        <h1 className="text-4xl font-[600]">{t.contact.title}</h1>
         <p className="text-sm text-dark-hover dark:text-morelight-hover">
-          Get in touch
+          {t.contact.subtitle}
         </p>
       </div>
 
@@ -54,7 +59,7 @@ const ContactMe = () => {
           <div className="flex items-center gap-4">
             <FaPhone className="text-2xl text-main" />
             <div>
-              <h3 className="text-lg font-medium">Call Me</h3>
+              <h3 className="text-lg font-medium">{lang === "az" ? "Zəng et" : "Call Me"}</h3>
               <a
                 href={MyPhoneLink}
                 className="text-sm/1 !text-supdark-hover dark:!text-suplight-hover"
@@ -78,7 +83,7 @@ const ContactMe = () => {
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="text-2xl text-main" />
             <div>
-              <h3 className="text-lg font-medium">Location</h3>
+              <h3 className="text-lg font-medium">{lang === "az" ? "Ünvan" : "Location"}</h3>
               <p className="text-sm text-supdark-hover dark:text-suplight-hover">
                 {MyLocation}
               </p>
@@ -93,7 +98,7 @@ const ContactMe = () => {
             onSubmit={onSubmit}
           >
             {(
-              { isSubmitting, errors, touched } // 'errors' ve 'touched' eklendi
+              { isSubmitting, errors, touched }
             ) => (
               <Form className="flex flex-col gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -101,7 +106,7 @@ const ContactMe = () => {
                     <Field
                       type="text"
                       name="name"
-                      placeholder="Name"
+                      placeholder={t.contact.name}
                       className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-morelight-hover
                         ${
                           touched.name && errors.name
@@ -119,7 +124,7 @@ const ContactMe = () => {
                     <Field
                       type="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder={t.contact.email}
                       className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-morelight-hover
                         ${
                           touched.email && errors.email
@@ -138,7 +143,7 @@ const ContactMe = () => {
                   <Field
                     type="text"
                     name="project"
-                    placeholder="Project"
+                    placeholder={lang === "az" ? "Mövzu" : "Project"}
                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-morelight-hover
                         ${
                           touched.project && errors.project
@@ -156,7 +161,7 @@ const ContactMe = () => {
                   <Field
                     as="textarea"
                     name="message"
-                    placeholder="Message"
+                    placeholder={t.contact.message}
                     rows="6"
                     className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-morelight-hover resize-y
                         ${
@@ -178,7 +183,7 @@ const ContactMe = () => {
                   endIcon={<FaPaperPlane />}
                   disabled={isSubmitting}
                 >
-                  Send Message
+                  {t.contact.send}
                 </Button>
               </Form>
             )}

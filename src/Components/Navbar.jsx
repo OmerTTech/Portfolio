@@ -5,10 +5,19 @@ import ScrollLink from "./ScrollLink";
 import { useDispatch, useSelector } from "react-redux";
 import { darkmodeHandler } from "../Store/Slices/DarkmodeSlice.jsx";
 import { FiSun } from "react-icons/fi";
+import { useTranslation } from "../Hooks/useTranslation";
+import { setLanguage } from "../Store/Slices/LanguageSlice.jsx";
 
 const Navbar = ({ isScrolled }) => {
   const isDarkmode = useSelector((state) => state.darkmode.darkmode);
+  const lang = useSelector((state) => state.language.lang);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
+
+  const toggleLang = () => {
+    dispatch(setLanguage(lang === "en" ? "az" : "en"));
+  };
+
   return (
     <nav className="max-w-[1000px] w-full hidden sm:flex items-center justify-between py-5.5 lg:px-2 sm:px-5 sm:ps-8 lg:ps-0 text-sm font-[500] bg-white dark:bg-body-dark">
       <ScrollLink to="home" offset={-300}>
@@ -30,21 +39,27 @@ const Navbar = ({ isScrolled }) => {
             }`}
           >
             <ScrollLink to="home" offset={-300}>
-              <li>Home</li>
+              <li>{t("nav.home")}</li>
             </ScrollLink>
           </span>
           <ScrollLink to="about" offset={85}>
-            <li>About</li>
+            <li>{t("nav.about")}</li>
           </ScrollLink>
           <ScrollLink to="skills" offset={85}>
-            <li>Skills</li>
+            <li>{t("nav.skills")}</li>
           </ScrollLink>
           <ScrollLink to="portfolio" offset={85}>
-            <li>Portfolio</li>
+            <li>{t("nav.portfolio")}</li>
           </ScrollLink>
           <ScrollLink to="contact">
-            <li>Contact Me</li>
+            <li>{t("nav.contact")}</li>
           </ScrollLink>
+          <li 
+            onClick={toggleLang}
+            className="text-xs !p-1.5 px-2 border border-main dark:border-white rounded hover:bg-main hover:text-white transition cursor-pointer font-semibold"
+          >
+            {lang.toUpperCase()}
+          </li>
           <li onClick={()=>dispatch(darkmodeHandler())} className="text-xl !p-0 hover:text-main transition cursor-pointer">
             {isDarkmode? <FiSun /> :<RiMoonLine />}
           </li>

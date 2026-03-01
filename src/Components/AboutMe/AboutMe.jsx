@@ -5,25 +5,30 @@ import Button from "@mui/material/Button";
 import { LuDownload } from "react-icons/lu";
 import OmerTTech_CV_EN from "../../Assets/CV/OmerTTech_CV_EN.pdf";
 import { slidesData } from "./slidesData";
+import { useSelector } from "react-redux";
+import translations from "../../Utils/translations";
 
 const AboutMe = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const lang = useSelector((state) => state.language.lang);
+  const t = translations[lang];
+  const currentSlides = slidesData[lang];
 
   const handleNextSlide = () => {
-    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
+    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % currentSlides.length);
   };
 
   const handlePrevSlide = () => {
     setCurrentSlideIndex(
-      (prevIndex) => (prevIndex - 1 + slidesData.length) % slidesData.length
+      (prevIndex) => (prevIndex - 1 + currentSlides.length) % currentSlides.length
     );
   };
 
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <h1 className="text-4xl font-[600]">About Me</h1>
-        <p className="text-sm text-dark-hover dark:text-morelight-hover">My Introduction</p>
+        <h1 className="text-4xl font-[600]">{t.about.title}</h1>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">{t.about.subtitle}</p>
       </div>
       <div className="flex flex-col md:flex-row  md:justify-around p-5 pt-15 relative">
         <div className="w-full md:w-[40%] object-contain mb-5 md:mb-0">
@@ -32,10 +37,10 @@ const AboutMe = () => {
         <div className="w-full md:w-[40%] flex flex-col pt-3">
           <div className="text-center md:text-start pe-5 h-[290px] overflow-y-auto">
             <h2 className="text-2xl font-semibold mb-2 text-hover dark:text-suplight-hover">
-              {slidesData[currentSlideIndex].title}
+              {currentSlides[currentSlideIndex].title}
             </h2>
             <p className="text-moredark-hover dark:text-morelight-hover">
-              {slidesData[currentSlideIndex].text}
+              {currentSlides[currentSlideIndex].text}
             </p>
           </div>
 
@@ -48,7 +53,7 @@ const AboutMe = () => {
                 <FaArrowLeft />
               </button>
 
-              {slidesData.map((_, index) => (
+              {currentSlides.map((_, index) => (
                 <span
                   key={index}
                   onClick={() => setCurrentSlideIndex(index)}
@@ -77,7 +82,7 @@ const AboutMe = () => {
                 className=" !capitalize !p-3 lg:!p-3 !text-lg !font-[500] md:!pe-3.5 lg:!pe-3.5 !bg-main hover:!bg-dark-hover ease"
                 endIcon={<LuDownload />}
               >
-                Download CV
+                {t.about.downloadCV}
               </Button>
             </a>
           </div>

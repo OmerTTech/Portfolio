@@ -14,8 +14,9 @@ import {
   SiExpress,
 } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
-import { IoLogoFirebase  } from "react-icons/io5";
-
+import { IoLogoFirebase } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import translations from "../Utils/translations";
 
 const skillsData = [
   { name: "React", icon: <IoLogoReact size={50} color="#61DAFB" /> },
@@ -49,11 +50,14 @@ const skillsData = [
 ];
 
 const Skills = () => {
+  const lang = useSelector((state) => state.language.lang);
+  const t = translations[lang];
+
   return (
-    <div className="flex flex-col items-center justify-center pt-20">
+    <div className="py-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
-        <h1 className="text-4xl font-[600]">Skills</h1>
-        <p className="text-sm text-dark-hover dark:text-morelight-hover">My tech stack</p>
+        <h1 className="text-4xl font-[600]">{t.skills.title}</h1>
+        <p className="text-sm text-dark-hover dark:text-morelight-hover">{t.skills.subtitle}</p>
       </div>
       <div className="grid grid-cols-3 gap-x-10 sm:gap-x-20 md:gap-x-25 lg:gap-x-30 gap-y-4">
         {skillsData.map((skill, index) => (

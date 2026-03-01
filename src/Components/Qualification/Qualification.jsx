@@ -3,6 +3,7 @@ import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { LuCalendarDays } from "react-icons/lu";
 import { API } from "../../Services/Api.js";
 import { useSelector } from "react-redux";
+import translations from "../../Utils/translations";
 
 import QualfManuelDatas from "./QualfData.js";
 
@@ -10,6 +11,7 @@ const Qualification = () => {
   const [activeTab, setActiveTab] = useState("workExperience");
   const [qualfData, setQualfData] = useState([]);
   const lang = useSelector((state) => state.language.lang);
+  const t = translations[lang];
 
   useEffect(() => {
     const fetchQualfData = async () => {
@@ -45,9 +47,9 @@ const Qualification = () => {
   return (
     <div className="py-20">
       <div className="flex flex-col items-center justify-center gap-2 mb-10">
-        <h1 className="text-4xl font-[600]">Qualification</h1>
+        <h1 className="text-4xl font-[600]">{t.qualification.title}</h1>
         <p className="text-sm text-dark-hover dark:text-morelight-hover">
-          My personal journey
+          {t.qualification.subtitle}
         </p>
       </div>
 
@@ -61,7 +63,7 @@ const Qualification = () => {
           onClick={() => setActiveTab("workExperience")}
         >
           <FaBriefcase size={24} />
-          <span className="text-lg font-medium">Work</span>
+          <span className="text-lg font-medium">{t.qualification.work}</span>
         </button>
         <button
           className={`flex items-center gap-2 py-2 px-4 rounded-lg transition-colors duration-300 ${
@@ -72,7 +74,7 @@ const Qualification = () => {
           onClick={() => setActiveTab("education")}
         >
           <FaGraduationCap size={24} />
-          <span className="text-lg font-medium">Education</span>
+          <span className="text-lg font-medium">{t.qualification.education}</span>
         </button>
       </div>
 
