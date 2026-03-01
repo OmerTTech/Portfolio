@@ -60,41 +60,41 @@ export const API = {
   slides: {
     getAll: () => {
       const lang = store.getState().language.lang;
-      return api.get(`/slides/${lang}`);
+      return api.get(`/api/slides/${lang}`);
     },
-    create: (slide) => api.post("/slides", slide),
-    update: (id, slide) => api.put(`/slides/${id}`, slide),
-    delete: (id) => api.delete(`/slides/${id}`),
+    create: (slide) => api.post("/api/slides", slide),
+    update: (id, slide) => api.put(`/api/slides/${id}`, slide),
+    delete: (id) => api.delete(`/api/slides/${id}`),
   },
 
   portfolio: {
     getAll: () => {
       const lang = store.getState().language.lang;
-      return api.get(`/portfolios/${lang}`);
+      return api.get(`/api/portfolios/${lang}`);
     },
-    create: (portfolio) => api.post("/portfolios", portfolio),
-    update: (id, portfolio) => api.put(`/portfolios/${id}`, portfolio),
-    delete: (id) => api.delete(`/portfolios/${id}`),
+    create: (portfolio) => api.post("/api/portfolios", portfolio),
+    update: (id, portfolio) => api.put(`/api/portfolios/${id}`, portfolio),
+    delete: (id) => api.delete(`/api/portfolios/${id}`),
   },
 
   qualf: {
     getAll: () => {
       const lang = store.getState().language.lang;
-      return api.get(`/qualfs/${lang}`);
+      return api.get(`/api/qualfs/${lang}`);
     },
     getByCategory: (category) => {
       const lang = store.getState().language.lang;
-      return api.get(`/qualfs/${category}/${lang}`);
+      return api.get(`/api/qualfs/${category}/${lang}`);
     },
-    create: (qualf) => api.post("/qualfs", qualf),
-    update: (id, qualf) => api.put(`/qualfs/${id}`, qualf),
-    delete: (id) => api.delete(`/qualfs/${id}`),
+    create: (qualf) => api.post("/api/qualfs", qualf),
+    update: (id, qualf) => api.put(`/api/qualfs/${id}`, qualf),
+    delete: (id) => api.delete(`/api/qualfs/${id}`),
   },
   contact: {
     getAll: () => {
-      return api.get("/contacts");
+      return api.get("/api/contacts");
     },
-    update: (id, contact) => api.put(`/contacts/${id}`, contact),
+    update: (id, contact) => api.put(`/api/contacts/${id}`, contact),
   },
 
   messages: {
