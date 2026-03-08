@@ -18,6 +18,7 @@ const Header = () => {
       </h1>
       <div className="mt-2">
         <TypeAnimation
+          key={lang}
           sequence={[
             lang === "az" ? "Mən Frontend Developerəm" : "I am a Frontend Developer",
             2500,

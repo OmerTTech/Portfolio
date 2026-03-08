@@ -25,6 +25,7 @@ const Qualification = () => {
           ...item,
           title: item.title?.[lang] || item.title?.en || "",
           company: item.company?.[lang] || item.company?.en || "",
+          years: item.years?.replace(/Present/gi, lang === "az" ? "Hal-hazırda" : "Present"),
         }));
 
         console.log("Current lang:", lang);
@@ -33,7 +34,11 @@ const Qualification = () => {
         
         if (!transformedData || transformedData.length === 0) {
           console.warn("API'den veri gelmedi. Manuel veriye geçiliyor.");
-          setQualfData(QualfManuelDatas[activeTab] || []);
+          const manualData = (QualfManuelDatas[activeTab] || []).map(item => ({
+            ...item,
+            years: item.years?.replace(/Present/gi, lang === "az" ? "Hal-hazırda" : "Present"),
+          }));
+          setQualfData(manualData);
         } else {
           setQualfData(transformedData);
         }
@@ -42,7 +47,11 @@ const Qualification = () => {
           "Nitelik verisi çekilirken hata oluştu. Manuel veriye geçiliyor:",
           error
         );
-        setQualfData(QualfManuelDatas[activeTab] || []);
+        const manualData = (QualfManuelDatas[activeTab] || []).map(item => ({
+          ...item,
+          years: item.years?.replace(/Present/gi, lang === "az" ? "Hal-hazırda" : "Present"),
+        }));
+        setQualfData(manualData);
       }
     };
     fetchQualfData();
